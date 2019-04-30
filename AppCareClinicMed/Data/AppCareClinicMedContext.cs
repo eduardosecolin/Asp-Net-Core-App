@@ -23,5 +23,7 @@ namespace AppCareClinicMed.Models
         public DbSet<AppCareClinicMed.Models.PACIENTE> PACIENTE { get; set; }
         public DbSet<AppCareClinicMed.Models.TIPO_CONSULTA> TIPO_CONSULTA { get; set; }
         public DbSet<AppCareClinicMed.Models.USUARIOS> USUARIOS { get; set; }
+        public DbSet<AppCareClinicMed.Models.ESTADOS> ESTADOS { get; set; }
+        public DbSet<AppCareClinicMed.Models.PAIS> PAIS { get; set; }
     }
 }

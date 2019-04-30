@@ -1,32 +1,30 @@
-﻿@page
-@model AppCareClinicMed.Views.Convenio.CreateModel
+﻿@model AppCareClinicMed.Models.CONVENIO
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Cadastrar";
 }
 
-<h1>Create</h1>
+<h1>Cadastrar Convenio Médico</h1>
 
-<h4>CONVENIO</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form method="post">
+        <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="CONVENIO.Descricao" class="control-label"></label>
-                <input asp-for="CONVENIO.Descricao" class="form-control" />
-                <span asp-validation-for="CONVENIO.Descricao" class="text-danger"></span>
+                <label asp-for="Descricao" class="control-label"></label>
+                <input asp-for="Descricao" class="form-control" />
+                <span asp-validation-for="Descricao" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Cadastrar" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-page="Index">Back to List</a>
+    <a asp-action="Index">Voltar</a>
 </div>
 
 @section Scripts {

@@ -7,6 +7,14 @@ using System.Threading.Tasks;
 namespace AppCareClinicMed.Models {
     public class PAIS {
 
+        public PAIS() {
+
+        }
+
+        public PAIS(string pais) {
+            Pais = pais;
+        }
+
         [Key]
         public int Id { get; set; }
 

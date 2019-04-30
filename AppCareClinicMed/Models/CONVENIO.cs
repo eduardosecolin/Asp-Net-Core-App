@@ -7,6 +7,14 @@ using System.Threading.Tasks;
 namespace AppCareClinicMed.Models {
     public class CONVENIO {
 
+        public CONVENIO() {
+
+        }
+
+        public CONVENIO(string descricao) {
+            Descricao = descricao;
+        }
+
         [Key]
         public int Id { get; set; }
 

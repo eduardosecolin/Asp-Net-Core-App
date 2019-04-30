@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using AppCareClinicMed.Models;
+using AppCareClinicMed.Data;
 
 namespace AppCareClinicMed {
     public class Startup {
@@ -31,14 +32,17 @@ namespace AppCareClinicMed {
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-    services.AddDbContext<AppCareClinicMedContext>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString("AppCareClinicMedContext")));
+            services.AddDbContext<AppCareClinicMedContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("AppCareClinicMedContext")));
+
+            services.AddScoped<SeedingService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env) {
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, SeedingService seedingService) {
             if (env.IsDevelopment()) {
                 app.UseDeveloperExceptionPage();
+                seedingService.Seed();
             }
             else {
                 app.UseExceptionHandler("/Home/Error");

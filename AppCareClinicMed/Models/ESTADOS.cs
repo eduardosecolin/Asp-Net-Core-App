@@ -7,6 +7,14 @@ using System.Threading.Tasks;
 namespace AppCareClinicMed.Models {
     public class ESTADOS {
 
+        public ESTADOS() {
+
+        }
+
+        public ESTADOS(string estado) {
+            Estado = estado;
+        }
+
         [Key]
         public int Id { get; set; }
 
