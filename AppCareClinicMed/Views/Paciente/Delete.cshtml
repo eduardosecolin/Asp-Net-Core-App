@@ -1,0 +1,94 @@
+﻿@page
+@model AppCareClinicMed.Views.Paciente.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>PACIENTE</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PACIENTE.Nome)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PACIENTE.Nome)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PACIENTE.Data_nascimento)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PACIENTE.Data_nascimento)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PACIENTE.Sexo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PACIENTE.Sexo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PACIENTE.Estado_civil)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PACIENTE.Estado_civil)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PACIENTE.Endereco)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PACIENTE.Endereco)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PACIENTE.Numero)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PACIENTE.Numero)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PACIENTE.Cidade)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PACIENTE.Cidade)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PACIENTE.Estado)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PACIENTE.Estado.Id)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PACIENTE.Pais)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PACIENTE.Pais.Id)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PACIENTE.Cpf)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PACIENTE.Cpf)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PACIENTE.Rg)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PACIENTE.Rg)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PACIENTE.Convenio)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PACIENTE.Convenio.Id)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="PACIENTE.Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

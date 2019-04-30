@@ -1,0 +1,66 @@
+﻿@page
+@model AppCareClinicMed.Views.Agendamento.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AGENDAMENTO[0].retorno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AGENDAMENTO[0].Data_agendamento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AGENDAMENTO[0].Paciente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AGENDAMENTO[0].Medico)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AGENDAMENTO[0].Tipo_consulta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AGENDAMENTO[0].Convenio)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.AGENDAMENTO) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.retorno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Data_agendamento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Paciente.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Medico.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tipo_consulta.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Convenio.Id)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

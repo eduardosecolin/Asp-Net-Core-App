@@ -1,0 +1,90 @@
+﻿@page
+@model AppCareClinicMed.Views.Paciente.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>PACIENTE</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="PACIENTE.Id" />
+            <div class="form-group">
+                <label asp-for="PACIENTE.Nome" class="control-label"></label>
+                <input asp-for="PACIENTE.Nome" class="form-control" />
+                <span asp-validation-for="PACIENTE.Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PACIENTE.Data_nascimento" class="control-label"></label>
+                <input asp-for="PACIENTE.Data_nascimento" class="form-control" />
+                <span asp-validation-for="PACIENTE.Data_nascimento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PACIENTE.Sexo" class="control-label"></label>
+                <input asp-for="PACIENTE.Sexo" class="form-control" />
+                <span asp-validation-for="PACIENTE.Sexo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PACIENTE.Estado_civil" class="control-label"></label>
+                <input asp-for="PACIENTE.Estado_civil" class="form-control" />
+                <span asp-validation-for="PACIENTE.Estado_civil" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PACIENTE.Endereco" class="control-label"></label>
+                <input asp-for="PACIENTE.Endereco" class="form-control" />
+                <span asp-validation-for="PACIENTE.Endereco" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PACIENTE.Numero" class="control-label"></label>
+                <input asp-for="PACIENTE.Numero" class="form-control" />
+                <span asp-validation-for="PACIENTE.Numero" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PACIENTE.Cidade" class="control-label"></label>
+                <input asp-for="PACIENTE.Cidade" class="form-control" />
+                <span asp-validation-for="PACIENTE.Cidade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PACIENTE.ESTADOSId" class="control-label"></label>
+                <select asp-for="PACIENTE.ESTADOSId" class="form-control" asp-items="ViewBag.ESTADOSId"></select>
+                <span asp-validation-for="PACIENTE.ESTADOSId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PACIENTE.PAISId" class="control-label"></label>
+                <select asp-for="PACIENTE.PAISId" class="form-control" asp-items="ViewBag.PAISId"></select>
+                <span asp-validation-for="PACIENTE.PAISId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PACIENTE.Cpf" class="control-label"></label>
+                <input asp-for="PACIENTE.Cpf" class="form-control" />
+                <span asp-validation-for="PACIENTE.Cpf" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PACIENTE.Rg" class="control-label"></label>
+                <input asp-for="PACIENTE.Rg" class="form-control" />
+                <span asp-validation-for="PACIENTE.Rg" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PACIENTE.CONVENIOId" class="control-label"></label>
+                <select asp-for="PACIENTE.CONVENIOId" class="form-control" asp-items="ViewBag.CONVENIOId"></select>
+                <span asp-validation-for="PACIENTE.CONVENIOId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

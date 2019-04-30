@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using AppCareClinicMed.Models;
 
 namespace AppCareClinicMed {
     public class Startup {
@@ -28,6 +30,9 @@ namespace AppCareClinicMed {
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+    services.AddDbContext<AppCareClinicMedContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("AppCareClinicMedContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
