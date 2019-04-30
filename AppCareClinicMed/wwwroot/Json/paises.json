@@ -1,25 +1,25 @@
 
   [
     {
-      "gentilico": "afegãne",
-      "Pais": "Afeganistão",
+      "gentilico": "afegane",
+      "Pais": "Afeganistao",
       "Pais_int": "Afghanistan",
       "sigla": "AF"
     },
     {
       "gentilico": "sul-africana",
-      "Pais": "África do Sul",
+      "Pais": "Africa do Sul",
       "Pais_int": "South Africa",
       "sigla": "ZA"
     },
     {
       "gentilico": "albanesa",
-      "Pais": "Albânia",
+      "Pais": "Albania",
       "Pais_int": "Albania",
       "sigla": "AL"
     },
     {
-      "gentilico": "alemã",
+      "gentilico": "alema",
       "Pais": "Alemanha",
       "Pais_int": "Germany",
       "sigla": "DE"
@@ -43,26 +43,26 @@
       "sigla": "AI"
     },
     {
-      "gentilico": "de antártida",
-      "Pais": "Antártida",
+      "gentilico": "de antartida",
+      "Pais": "Antartida",
       "Pais_int": "Antarctica",
       "sigla": "AQ"
     },
     {
       "gentilico": "antiguana",
-      "Pais": "Antígua e Barbuda",
+      "Pais": "Antigua e Barbuda",
       "Pais_int": "Antigua & Barbuda",
       "sigla": "AG"
     },
     {
       "gentilico": "saudita",
-      "Pais": "Arábia Saudita",
+      "Pais": "Arabia Saudita",
       "Pais_int": "Saudi Arabia",
       "sigla": "SA"
     },
     {
       "gentilico": "argelina",
-      "Pais": "Argélia",
+      "Pais": "Argelia",
       "Pais_int": "Algeria",
       "sigla": "DZ"
     },
@@ -73,8 +73,8 @@
       "sigla": "AR"
     },
     {
-      "gentilico": "armênia",
-      "Pais": "Armênia",
+      "gentilico": "armenia",
+      "Pais": "Armenia",
       "Pais_int": "Armenia",
       "sigla": "AM"
     },
@@ -86,19 +86,19 @@
     },
     {
       "gentilico": "australiana",
-      "Pais": "Austrália",
+      "Pais": "Australia",
       "Pais_int": "Australia",
       "sigla": "AU"
     },
     {
-      "gentilico": "austríaca",
-      "Pais": "Áustria",
+      "gentilico": "austriaca",
+      "Pais": "Austria",
       "Pais_int": "Austria",
       "sigla": "AT"
     },
     {
       "gentilico": "azerbaijano",
-      "Pais": "Azerbaijão",
+      "Pais": "Azerbaijao",
       "Pais_int": "Azerbaijan",
       "sigla": "AZ"
     },
@@ -134,7 +134,7 @@
     },
     {
       "gentilico": "belga",
-      "Pais": "Bélgica",
+      "Pais": "Belgica",
       "Pais_int": "Belgium",
       "sigla": "BE"
     },
@@ -158,13 +158,13 @@
     },
     {
       "gentilico": "boliviana",
-      "Pais": "Bolívia",
+      "Pais": "Bolivia",
       "Pais_int": "Bolivia",
       "sigla": "BO"
     },
     {
-      "gentilico": "bósnia",
-      "Pais": "Bósnia-Herzegóvina",
+      "gentilico": "bosnia",
+      "Pais": "Bosnia-Herzegovina",
       "Pais_int": "Bosnia & Herzegovina",
       "sigla": "BA"
     },
@@ -187,13 +187,13 @@
       "sigla": "BN"
     },
     {
-      "gentilico": "búlgara",
-      "Pais": "Bulgária",
+      "gentilico": "bulgara",
+      "Pais": "Bulgaria",
       "Pais_int": "Bulgaria",
       "sigla": "BG"
     },
     {
-      "gentilico": "burquinês",
+      "gentilico": "burquines",
       "Pais": "Burkina Fasso",
       "Pais_int": "Burkina Faso",
       "sigla": "BF"
@@ -206,7 +206,7 @@
     },
     {
       "gentilico": "butanesa",
-      "Pais": "Butão",
+      "Pais": "Butao",
       "Pais_int": "Bhutan",
       "sigla": "BT"
     },
@@ -230,19 +230,19 @@
     },
     {
       "gentilico": "canadense",
-      "Pais": "Canadá",
+      "Pais": "Canada",
       "Pais_int": "Canada",
       "sigla": "CA"
     },
     {
-      "gentilico": "canário",
-      "Pais": "Canárias",
+      "gentilico": "canario",
+      "Pais": "Canarias",
       "Pais_int": "Canary Islands",
       "sigla": "IC"
     },
     {
       "gentilico": "cazaque",
-      "Pais": "Cazaquistão",
+      "Pais": "Cazaquistao",
       "Pais_int": "Kazakhstan",
       "sigla": "KZ"
     },
@@ -284,7 +284,7 @@
     },
     {
       "gentilico": "colombiana",
-      "Pais": "Colômbia",
+      "Pais": "Colombia",
       "Pais_int": "Colombia",
       "sigla": "CO"
     },
@@ -302,20 +302,20 @@
     },
     {
       "gentilico": "norte-coreano",
-      "Pais": "Coréia do Norte",
+      "Pais": "Coreia do Norte",
       "Pais_int": "North Korea",
       "sigla": "KP"
     },
     {
       "gentilico": "norte-coreana",
-      "Pais": "Coréia do Sul",
+      "Pais": "Coreia do Sul",
       "Pais_int": "South Korea",
       "sigla": "KR"
     },
     {
       "gentilico": "marfinense",
       "Pais": "Costa do Marfim",
-      "Pais_int": "Côte d¿Ivoire",
+      "Pais_int": "Cote d¿Ivoire",
       "sigla": "CI"
     },
     {
@@ -326,7 +326,7 @@
     },
     {
       "gentilico": "croata",
-      "Pais": "Croácia",
+      "Pais": "Croacia",
       "Pais_int": "Croatia",
       "sigla": "HR"
     },
@@ -367,7 +367,7 @@
       "sigla": "DM"
     },
     {
-      "gentilico": "egípcia",
+      "gentilico": "egipcia",
       "Pais": "Egito",
       "Pais_int": "Egypt",
       "sigla": "EG"
@@ -379,8 +379,8 @@
       "sigla": "SV"
     },
     {
-      "gentilico": "árabe",
-      "Pais": "Emirados Árabes Unidos",
+      "gentilico": "Arabe",
+      "Pais": "Emirados Arabes Unidos",
       "Pais_int": "United Arab Emirates",
       "sigla": "AE"
     },
@@ -392,19 +392,19 @@
     },
     {
       "gentilico": "eritreia",
-      "Pais": "Eritréia",
+      "Pais": "Eritreia",
       "Pais_int": "Eritrea",
       "sigla": "ER"
     },
     {
       "gentilico": "eslovaco",
-      "Pais": "Eslováquia",
+      "Pais": "Eslovaquia",
       "Pais_int": "Slovakia",
       "sigla": "SK"
     },
     {
       "gentilico": "esloveno",
-      "Pais": "Eslovênia",
+      "Pais": "Eslovenia",
       "Pais_int": "Slovenia",
       "sigla": "SI"
     },
@@ -422,13 +422,13 @@
     },
     {
       "gentilico": "estoniana",
-      "Pais": "Estônia",
+      "Pais": "Estonia",
       "Pais_int": "Estonia",
       "sigla": "EE"
     },
     {
-      "gentilico": "etíope",
-      "Pais": "Etiópia",
+      "gentilico": "etiope",
+      "Pais": "Etiopia",
       "Pais_int": "Ethiopia",
       "sigla": "ET"
     },
@@ -446,7 +446,7 @@
     },
     {
       "gentilico": "finlandesa",
-      "Pais": "Finlândia",
+      "Pais": "Finlandia",
       "Pais_int": "Finland",
       "sigla": "FI"
     },
@@ -458,13 +458,13 @@
     },
     {
       "gentilico": "gabonesa",
-      "Pais": "Gabão",
+      "Pais": "Gabao",
       "Pais_int": "Gabon",
       "sigla": "GA"
     },
     {
       "gentilico": "gambiana",
-      "Pais": "Gâmbia",
+      "Pais": "Gambia",
       "Pais_int": "Gambia",
       "sigla": "GM"
     },
@@ -476,7 +476,7 @@
     },
     {
       "gentilico": "georgiana",
-      "Pais": "Geórgia",
+      "Pais": "Georgia",
       "Pais_int": "Georgia",
       "sigla": "GE"
     },
@@ -488,7 +488,7 @@
     },
     {
       "gentilico": "inglesa",
-      "Pais": "Grã-Bretanha (Reino Unido, UK)",
+      "Pais": "Gra-Bretanha (Reino Unido, UK)",
       "Pais_int": "United Kingdom",
       "sigla": "GB"
     },
@@ -500,13 +500,13 @@
     },
     {
       "gentilico": "grega",
-      "Pais": "Grécia",
+      "Pais": "Grecia",
       "Pais_int": "Greece",
       "sigla": "GR"
     },
     {
       "gentilico": "groenlandesa",
-      "Pais": "Groelândia",
+      "Pais": "Groelandia",
       "Pais_int": "Greenland",
       "sigla": "GL"
     },
@@ -517,8 +517,8 @@
       "sigla": "GP"
     },
     {
-      "gentilico": "guamês",
-      "Pais": "Guam (Território dos Estados Unidos)",
+      "gentilico": "guames",
+      "Pais": "Guam (Territorio dos Estados Unidos)",
       "Pais_int": "Guam",
       "sigla": "GU"
     },
@@ -547,20 +547,20 @@
       "sigla": "GF"
     },
     {
-      "gentilico": "guinéu-equatoriano ou equatoguineana",
-      "Pais": "Guiné",
+      "gentilico": "guineu-equatoriano ou equatoguineana",
+      "Pais": "Guine",
       "Pais_int": "Guinea",
       "sigla": "GN"
     },
     {
-      "gentilico": "guinéu-equatoriano",
-      "Pais": "Guiné Equatorial",
+      "gentilico": "guineu-equatoriano",
+      "Pais": "Guine Equatorial",
       "Pais_int": "Equatorial Guinea",
       "sigla": "GQ"
     },
     {
       "gentilico": "guineense",
-      "Pais": "Guiné-Bissau",
+      "Pais": "Guine-Bissau",
       "Pais_int": "Guinea-Bissau",
       "sigla": "GW"
     },
@@ -571,7 +571,7 @@
       "sigla": "HT"
     },
     {
-      "gentilico": "holandês",
+      "gentilico": "holandes",
       "Pais": "Holanda",
       "Pais_int": "Netherlands",
       "sigla": "NL"
@@ -589,14 +589,14 @@
       "sigla": "HK"
     },
     {
-      "gentilico": "húngara",
+      "gentilico": "hungara",
       "Pais": "Hungria",
       "Pais_int": "Hungary",
       "sigla": "HU"
     },
     {
       "gentilico": "iemenita",
-      "Pais": "Iêmen",
+      "Pais": "Iemen",
       "Pais_int": "Yemen",
       "sigla": "YE"
     },
@@ -607,8 +607,8 @@
       "sigla": "BV"
     },
     {
-      "gentilico": "da ilha de ascensão",
-      "Pais": "Ilha de Ascensão",
+      "gentilico": "da ilha de ascensao",
+      "Pais": "Ilha de Ascensao",
       "Pais_int": "Ascension Island",
       "sigla": "AC"
     },
@@ -619,7 +619,7 @@
       "sigla": "CP"
     },
     {
-      "gentilico": "manês",
+      "gentilico": "manes",
       "Pais": "Ilha de Man",
       "Pais_int": "Isle of Man",
       "sigla": "IM"
@@ -638,18 +638,18 @@
     },
     {
       "gentilico": "reunionense",
-      "Pais": "Ilha Reunião",
-      "Pais_int": "Réunion",
+      "Pais": "Ilha Reuniao",
+      "Pais_int": "Reunion",
       "sigla": "RE"
     },
     {
-      "gentilico": "alandês",
+      "gentilico": "alandes",
       "Pais": "Ilhas Aland",
       "Pais_int": "Åland Islands",
       "sigla": "AX"
     },
     {
-      "gentilico": "caimanês",
+      "gentilico": "caimanes",
       "Pais": "Ilhas Cayman",
       "Pais_int": "Cayman Islands",
       "sigla": "KY"
@@ -673,14 +673,14 @@
       "sigla": "FO"
     },
     {
-      "gentilico": "das ilhas geórgia do sul e sandwich do sul",
-      "Pais": "Ilhas Geórgia do Sul e Sandwich do Sul",
+      "gentilico": "das ilhas georgia do sul e sandwich do sul",
+      "Pais": "Ilhas Georgia do Sul e Sandwich do Sul",
       "Pais_int": "South Georgia & South Sandwich Islands",
       "sigla": "GS"
     },
     {
       "gentilico": "das ilhas heard e mcdonald",
-      "Pais": "Ilhas Heard e McDonald (Território da Austrália)",
+      "Pais": "Ilhas Heard e McDonald",
       "Pais_int": "Heard & McDonald Islands",
       "sigla": "HM"
     },
@@ -715,8 +715,8 @@
       "sigla": "NF"
     },
     {
-      "gentilico": "salomônico",
-      "Pais": "Ilhas Salomão",
+      "gentilico": "salomonico",
+      "Pais": "Ilhas Salomao",
       "Pais_int": "Solomon Islands",
       "sigla": "SB"
     },
@@ -733,7 +733,7 @@
       "sigla": "TK"
     },
     {
-      "gentilico": "turquês",
+      "gentilico": "turques",
       "Pais": "Ilhas Turks e Caicos",
       "Pais_int": "Turks & Caicos Islands",
       "sigla": "TC"
@@ -752,19 +752,19 @@
     },
     {
       "gentilico": "indiano",
-      "Pais": "Índia",
+      "Pais": "India",
       "Pais_int": "India",
       "sigla": "IN"
     },
     {
-      "gentilico": "indonésia",
-      "Pais": "Indonésia",
+      "gentilico": "indonesia",
+      "Pais": "Indonesia",
       "Pais_int": "Indonesia",
       "sigla": "ID"
     },
     {
       "gentilico": "iraniano",
-      "Pais": "Irã",
+      "Pais": "Ira",
       "Pais_int": "Iran",
       "sigla": "IR"
     },
@@ -782,7 +782,7 @@
     },
     {
       "gentilico": "islandesa",
-      "Pais": "Islândia",
+      "Pais": "Islandia",
       "Pais_int": "Iceland",
       "sigla": "IS"
     },
@@ -794,7 +794,7 @@
     },
     {
       "gentilico": "italiana",
-      "Pais": "Itália",
+      "Pais": "Italia",
       "Pais_int": "Italy",
       "sigla": "IT"
     },
@@ -806,7 +806,7 @@
     },
     {
       "gentilico": "japonesa",
-      "Pais": "Japão",
+      "Pais": "Japao",
       "Pais_int": "Japan",
       "sigla": "JP"
     },
@@ -818,7 +818,7 @@
     },
     {
       "gentilico": "jordaniana",
-      "Pais": "Jordânia",
+      "Pais": "Jordania",
       "Pais_int": "Jordan",
       "sigla": "JO"
     },
@@ -853,26 +853,26 @@
       "sigla": "LS"
     },
     {
-      "gentilico": "letão",
-      "Pais": "Letônia",
+      "gentilico": "letao",
+      "Pais": "Letonia",
       "Pais_int": "Latvia",
       "sigla": "LV"
     },
     {
       "gentilico": "libanesa",
-      "Pais": "Líbano",
+      "Pais": "Libano",
       "Pais_int": "Lebanon",
       "sigla": "LB"
     },
     {
       "gentilico": "liberiana",
-      "Pais": "Libéria",
+      "Pais": "Liberia",
       "Pais_int": "Liberia",
       "sigla": "LR"
     },
     {
-      "gentilico": "líbia",
-      "Pais": "Líbia",
+      "gentilico": "libia",
+      "Pais": "Libia",
       "Pais_int": "Libya",
       "sigla": "LY"
     },
@@ -884,7 +884,7 @@
     },
     {
       "gentilico": "lituana",
-      "Pais": "Lituânia",
+      "Pais": "Lituania",
       "Pais_int": "Lithuania",
       "sigla": "LT"
     },
@@ -901,8 +901,8 @@
       "sigla": "MO"
     },
     {
-      "gentilico": "macedônio",
-      "Pais": "Macedônia (República Yugoslava)",
+      "gentilico": "macedonio",
+      "Pais": "Macedonia (Republica Yugoslava)",
       "Pais_int": "Macedonia (FYROM)",
       "sigla": "MK"
     },
@@ -914,7 +914,7 @@
     },
     {
       "gentilico": "malaia",
-      "Pais": "Malásia",
+      "Pais": "Malasia",
       "Pais_int": "Malaysia",
       "sigla": "MY"
     },
@@ -925,7 +925,7 @@
       "sigla": "MW"
     },
     {
-      "gentilico": "maldívia",
+      "gentilico": "maldivia",
       "Pais": "Maldivas",
       "Pais_int": "Maldives",
       "sigla": "MV"
@@ -956,13 +956,13 @@
     },
     {
       "gentilico": "mauriciana",
-      "Pais": "Maurício",
+      "Pais": "Mauricio",
       "Pais_int": "Mauritius",
       "sigla": "MU"
     },
     {
       "gentilico": "mauritana",
-      "Pais": "Mauritânia",
+      "Pais": "Mauritania",
       "Pais_int": "Mauritania",
       "sigla": "MR"
     },
@@ -974,13 +974,13 @@
     },
     {
       "gentilico": "mexicana",
-      "Pais": "México",
+      "Pais": "Mexico",
       "Pais_int": "Mexico",
       "sigla": "MX"
     },
     {
-      "gentilico": "micronésia",
-      "Pais": "Micronésia",
+      "gentilico": "micronesia",
+      "Pais": "Micronesia",
       "Pais_int": "Micronesia",
       "sigla": "FM"
     },
@@ -998,13 +998,13 @@
     },
     {
       "gentilico": "monegasca",
-      "Pais": "Mônaco",
+      "Pais": "Monaco",
       "Pais_int": "Monaco",
       "sigla": "MC"
     },
     {
       "gentilico": "mongol",
-      "Pais": "Mongólia",
+      "Pais": "Mongolia",
       "Pais_int": "Mongolia",
       "sigla": "MN"
     },
@@ -1021,14 +1021,14 @@
       "sigla": "MS"
     },
     {
-      "gentilico": "birmanês",
+      "gentilico": "birmanes",
       "Pais": "Myanma",
       "Pais_int": "Myanmar (Burma)",
       "sigla": "MM"
     },
     {
-      "gentilico": "namíbia",
-      "Pais": "Namíbia",
+      "gentilico": "namibia",
+      "Pais": "Namibia",
       "Pais_int": "Namibia",
       "sigla": "NA"
     },
@@ -1046,19 +1046,19 @@
     },
     {
       "gentilico": "nicaraguense",
-      "Pais": "Nicarágua",
+      "Pais": "Nicaragua",
       "Pais_int": "Nicaragua",
       "sigla": "NI"
     },
     {
       "gentilico": "nigerina",
-      "Pais": "Níger",
+      "Pais": "Niger",
       "Pais_int": "Niger",
       "sigla": "NE"
     },
     {
       "gentilico": "nigeriana",
-      "Pais": "Nigéria",
+      "Pais": "Nigeria",
       "Pais_int": "Nigeria",
       "sigla": "NG"
     },
@@ -1075,26 +1075,26 @@
       "sigla": "NO"
     },
     {
-      "gentilico": "caledônia",
-      "Pais": "Nova Caledônia",
+      "gentilico": "caledonia",
+      "Pais": "Nova Caledonia",
       "Pais_int": "New Caledonia",
       "sigla": "NC"
     },
     {
       "gentilico": "neozelandesa",
-      "Pais": "Nova Zelândia",
+      "Pais": "Nova Zelandia",
       "Pais_int": "New Zealand",
       "sigla": "NZ"
     },
     {
       "gentilico": "omani",
-      "Pais": "Omã",
+      "Pais": "Oma",
       "Pais_int": "Oman",
       "sigla": "OM"
     },
     {
-      "gentilico": "dos países baixos caribenhos",
-      "Pais": "Países Baixos Caribenhos",
+      "gentilico": "dos paises baixos caribenhos",
+      "Pais": "Paises Baixos Caribenhos",
       "Pais_int": "Caribbean Netherlands",
       "sigla": "BQ"
     },
@@ -1111,20 +1111,20 @@
       "sigla": "PS"
     },
     {
-      "gentilico": "zona do canal do panamá",
-      "Pais": "Panamá",
+      "gentilico": "zona do canal do panama",
+      "Pais": "Panama",
       "Pais_int": "Panama",
       "sigla": "PA"
     },
     {
-      "gentilico": "pauásia",
-      "Pais": "Papua-Nova Guiné",
+      "gentilico": "pauasia",
+      "Pais": "Papua-Nova Guine",
       "Pais_int": "Papua New Guinea",
       "sigla": "PG"
     },
     {
       "gentilico": "paquistanesa",
-      "Pais": "Paquistão",
+      "Pais": "Paquistao",
       "Pais_int": "Pakistan",
       "sigla": "PK"
     },
@@ -1141,14 +1141,14 @@
       "sigla": "PE"
     },
     {
-      "gentilico": "franco-polinésia",
-      "Pais": "Polinésia Francesa",
+      "gentilico": "franco-polinesia",
+      "Pais": "Polinesia Francesa",
       "Pais_int": "French Polynesia",
       "sigla": "PF"
     },
     {
       "gentilico": "polonesa",
-      "Pais": "Polônia",
+      "Pais": "Polonia",
       "Pais_int": "Poland",
       "sigla": "PL"
     },
@@ -1172,43 +1172,43 @@
     },
     {
       "gentilico": "queniano",
-      "Pais": "Quênia",
+      "Pais": "Quenia",
       "Pais_int": "Kenya",
       "sigla": "KE"
     },
     {
       "gentilico": "quirguiz",
-      "Pais": "Quirguistão",
+      "Pais": "Quirguistao",
       "Pais_int": "Kyrgyzstan",
       "sigla": "KG"
     },
     {
       "gentilico": "centro-africana",
-      "Pais": "República Centro-Africana",
+      "Pais": "Republica Centro-Africana",
       "Pais_int": "Central African Republic",
       "sigla": "CF"
     },
     {
       "gentilico": "congolesa",
-      "Pais": "República Democrática do Congo",
+      "Pais": "Republica Democratica do Congo",
       "Pais_int": "Congo (DRC)",
       "sigla": "CD"
     },
     {
       "gentilico": "dominicana",
-      "Pais": "República Dominicana",
+      "Pais": "Republica Dominicana",
       "Pais_int": "Dominican Republic",
       "sigla": "DO"
     },
     {
       "gentilico": "tcheco",
-      "Pais": "República Tcheca",
+      "Pais": "Republica Tcheca",
       "Pais_int": "Czech Republic",
       "sigla": "CZ"
     },
     {
       "gentilico": "romena",
-      "Pais": "Romênia",
+      "Pais": "Romenia",
       "Pais_int": "Romania",
       "sigla": "RO"
     },
@@ -1220,7 +1220,7 @@
     },
     {
       "gentilico": "russa",
-      "Pais": "Rússia (antiga URSS) - Federação Russa",
+      "Pais": "Russia (antiga URSS) - Federaçao Russa",
       "Pais_int": "Russia",
       "sigla": "RU"
     },
@@ -1249,7 +1249,7 @@
       "sigla": "WS"
     },
     {
-      "gentilico": "samarinês",
+      "gentilico": "samarines",
       "Pais": "San Marino",
       "Pais_int": "San Marino",
       "sigla": "SM"
@@ -1262,43 +1262,43 @@
     },
     {
       "gentilico": "santa-lucense",
-      "Pais": "Santa Lúcia",
+      "Pais": "Santa Lucia",
       "Pais_int": "St. Lucia",
       "sigla": "LC"
     },
     {
-      "gentilico": "são-bartolomeense",
-      "Pais": "São Bartolomeu",
-      "Pais_int": "St. Barthélemy",
+      "gentilico": "sao-bartolomeense",
+      "Pais": "Sao Bartolomeu",
+      "Pais_int": "St. Barthelemy",
       "sigla": "BL"
     },
     {
-      "gentilico": "são-cristovense",
-      "Pais": "São Cristóvão e Névis",
+      "gentilico": "sao-cristovense",
+      "Pais": "Sao Cristovao e Nevis",
       "Pais_int": "St. Kitts & Nevis",
       "sigla": "KN"
     },
     {
-      "gentilico": "são-martinhense",
-      "Pais": "São Martim",
+      "gentilico": "sao-martinhense",
+      "Pais": "Sao Martim",
       "Pais_int": "St. Martin",
       "sigla": "MF"
     },
     {
-      "gentilico": "são-martinhense",
-      "Pais": "São Martinho",
+      "gentilico": "sao-martinhense",
+      "Pais": "Sao Martinho",
       "Pais_int": "Sint Maarten",
       "sigla": "SX"
     },
     {
-      "gentilico": "são-tomense",
-      "Pais": "São Tomé e Príncipe",
-      "Pais_int": "São Tomé & Príncipe",
+      "gentilico": "sao-tomense",
+      "Pais": "Sao Tome e Principe",
+      "Pais_int": "Sao Tome & Principe",
       "sigla": "ST"
     },
     {
       "gentilico": "sao-vicentino",
-      "Pais": "São Vicente e Granadinas",
+      "Pais": "Sao Vicente e Granadinas",
       "Pais_int": "St. Vincent & Grenadines",
       "sigla": "VC"
     },
@@ -1315,20 +1315,20 @@
       "sigla": "SL"
     },
     {
-      "gentilico": "sérvia",
-      "Pais": "Sérvia",
+      "gentilico": "servia",
+      "Pais": "Servia",
       "Pais_int": "Serbia",
       "sigla": "RS"
     },
     {
-      "gentilico": "síria",
-      "Pais": "Síria",
+      "gentilico": "siria",
+      "Pais": "Siria",
       "Pais_int": "Syria",
       "sigla": "SY"
     },
     {
       "gentilico": "somali",
-      "Pais": "Somália",
+      "Pais": "Somalia",
       "Pais_int": "Somalia",
       "sigla": "SO"
     },
@@ -1340,31 +1340,31 @@
     },
     {
       "gentilico": "suazi",
-      "Pais": "Suazilândia",
+      "Pais": "Suazilandia",
       "Pais_int": "Swaziland",
       "sigla": "SZ"
     },
     {
       "gentilico": "sudanesa",
-      "Pais": "Sudão",
+      "Pais": "Sudao",
       "Pais_int": "Sudan",
       "sigla": "SD"
     },
     {
-      "gentilico": "sul-sudanês",
-      "Pais": "Sudão do Sul",
+      "gentilico": "sul-sudanes",
+      "Pais": "Sudao do Sul",
       "Pais_int": "South Sudan",
       "sigla": "SS"
     },
     {
       "gentilico": "sueca",
-      "Pais": "Suécia",
+      "Pais": "Suecia",
       "Pais_int": "Sweden",
       "sigla": "SE"
     },
     {
-      "gentilico": "suíça",
-      "Pais": "Suíça",
+      "gentilico": "suiça",
+      "Pais": "Suiça",
       "Pais_int": "Switzerland",
       "sigla": "CH"
     },
@@ -1382,37 +1382,37 @@
     },
     {
       "gentilico": "tadjique",
-      "Pais": "Tadjiquistão",
+      "Pais": "Tadjiquistao",
       "Pais_int": "Tajikistan",
       "sigla": "TJ"
     },
     {
       "gentilico": "tailandesa",
-      "Pais": "Tailândia",
+      "Pais": "Tailandia",
       "Pais_int": "Thailand",
       "sigla": "TH"
     },
     {
-      "gentilico": "taiwanês",
+      "gentilico": "taiwanes",
       "Pais": "Taiwan",
       "Pais_int": "Taiwan",
       "sigla": "TW"
     },
     {
       "gentilico": "tanzaniana",
-      "Pais": "Tanzânia",
+      "Pais": "Tanzania",
       "Pais_int": "Tanzania",
       "sigla": "TZ"
     },
     {
-      "gentilico": "do território britânico do oceano índico",
-      "Pais": "Território Britânico do Oceano índico",
+      "gentilico": "do territorio britanico do oceano indico",
+      "Pais": "Territorio Britanico do Oceano indico",
       "Pais_int": "British Indian Ocean Territory",
       "sigla": "IO"
     },
     {
-      "gentilico": "do territórios do sul da frança",
-      "Pais": "Territórios do Sul da França",
+      "gentilico": "do territorios do sul da frança",
+      "Pais": "Territorios do Sul da França",
       "Pais_int": "French Southern Territories",
       "sigla": "TF"
     },
@@ -1435,26 +1435,26 @@
       "sigla": "TO"
     },
     {
-      "gentilico": "trinitário-tobagense",
+      "gentilico": "trinitario-tobagense",
       "Pais": "Trinidad e Tobago",
       "Pais_int": "Trinidad & Tobago",
       "sigla": "TT"
     },
     {
       "gentilico": "tristanita",
-      "Pais": "Tristão da Cunha",
+      "Pais": "Tristao da Cunha",
       "Pais_int": "Tristan da Cunha",
       "sigla": "TA"
     },
     {
       "gentilico": "tunisiana",
-      "Pais": "Tunísia",
+      "Pais": "Tunisia",
       "Pais_int": "Tunisia",
       "sigla": "TN"
     },
     {
       "gentilico": "turcomana",
-      "Pais": "Turcomenistão",
+      "Pais": "Turcomenistao",
       "Pais_int": "Turkmenistan",
       "sigla": "TM"
     },
@@ -1472,7 +1472,7 @@
     },
     {
       "gentilico": "ucraniana",
-      "Pais": "Ucrânia",
+      "Pais": "Ucrania",
       "Pais_int": "Ukraine",
       "sigla": "UA"
     },
@@ -1490,7 +1490,7 @@
     },
     {
       "gentilico": "uzbeque",
-      "Pais": "Uzbequistão",
+      "Pais": "Uzbequistao",
       "Pais_int": "Uzbekistan",
       "sigla": "UZ"
     },
@@ -1514,7 +1514,7 @@
     },
     {
       "gentilico": "vietnamita",
-      "Pais": "Vietnã",
+      "Pais": "Vietna",
       "Pais_int": "Vietnam",
       "sigla": "VN"
     },
@@ -1526,13 +1526,13 @@
     },
     {
       "gentilico": "zambiana",
-      "Pais": "Zâmbia",
+      "Pais": "Zambia",
       "Pais_int": "Zambia",
       "sigla": "ZM"
     },
     {
       "gentilico": "zimbabuana",
-      "Pais": "Zimbábue",
+      "Pais": "Zimbabue",
       "Pais_int": "Zimbabwe",
       "sigla": "ZW"
     }

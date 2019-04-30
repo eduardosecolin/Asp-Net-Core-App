@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Dynamic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace AppCareClinicMed.Data {
@@ -16,7 +17,7 @@ namespace AppCareClinicMed.Data {
 
         public void Seed() {
 
-            if(_context.ESPECIALIDADE.Any() || _context.CONVENIO.Any() || _context.ESTADOS.Any() || _context.PAIS.Any()) {
+            if (_context.ESPECIALIDADE.Any() || _context.CONVENIO.Any() || _context.ESTADOS.Any() || _context.PAIS.Any()) {
                 return; // banco de dados já foi populado
             }
 
@@ -70,13 +71,13 @@ namespace AppCareClinicMed.Data {
             string json = System.IO.File.ReadAllText(System.IO.Directory.GetCurrentDirectory() + @"/wwwroot/Json/paises.json");
             var result = Newtonsoft.Json.JsonConvert.DeserializeObject<List<PAIS>>(json);
             foreach (var item in result) {
-                PAIS p = new PAIS(item.Pais);
+                PAIS p = new PAIS(item.Pais.Replace("�", "ç"));
                 _context.AddRange(p);
             }
 
             _context.AddRange(c1, c2, c3, c4);
             _context.AddRange(es1, es2, es3, es4, es5, es6, es7);
-            _context.AddRange(e1, e2, e3, e4, e5, e6, e7, e8, e9, 
+            _context.AddRange(e1, e2, e3, e4, e5, e6, e7, e8, e9,
                 e10, e11, e12, e13, e14, e15, e16, e17, e18, e19, e20, e21, e22, e23, e24, e25, e26, e27);
 
             _context.SaveChanges();
