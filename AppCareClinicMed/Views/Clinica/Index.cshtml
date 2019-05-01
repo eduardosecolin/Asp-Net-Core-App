@@ -1,47 +1,46 @@
-﻿@page
-@model AppCareClinicMed.Views.Clinica.IndexModel
+﻿@model IEnumerable<AppCareClinicMed.Models.CLINICA>
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Clínica</h1>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-action="Create">Cadastrar</a>
 </p>
-<table class="table">
+<table class="table" style="font-size:small">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.CLINICA[0].Razao_social)
+                Razão Social
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CLINICA[0].Nome_fantasia)
+                Nome Fantasia
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CLINICA[0].Cnpj)
+                CNPJ
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CLINICA[0].Endereco)
+                Endereço
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CLINICA[0].Numero)
+                Número
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CLINICA[0].Cidade)
+                Cidade
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CLINICA[0].Estado)
+                Estado
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CLINICA[0].Pais)
+                País
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.CLINICA) {
+@foreach (var item in Model) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Razao_social)
@@ -62,15 +61,15 @@
                 @Html.DisplayFor(modelItem => item.Cidade)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Estado.Id)
+                @Html.DisplayFor(modelItem => item.Estado.Estado)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Pais.Id)
+                @Html.DisplayFor(modelItem => item.Pais.Pais)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
             </td>
         </tr>
 }

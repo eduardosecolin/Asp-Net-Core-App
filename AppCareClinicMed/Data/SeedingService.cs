@@ -59,21 +59,23 @@ namespace AppCareClinicMed.Data {
             #endregion
 
             #region Especialidades
-            ESPECIALIDADE es1 = new ESPECIALIDADE("Cardiologista");
-            ESPECIALIDADE es2 = new ESPECIALIDADE("Dermatologista");
-            ESPECIALIDADE es3 = new ESPECIALIDADE("Ginecologista");
-            ESPECIALIDADE es4 = new ESPECIALIDADE("Infectologista");
-            ESPECIALIDADE es5 = new ESPECIALIDADE("Neurologista");
-            ESPECIALIDADE es6 = new ESPECIALIDADE("Ortopedista");
-            ESPECIALIDADE es7 = new ESPECIALIDADE("Urologista");
+            ESPECIALIDADE es1 = new ESPECIALIDADE("Cardiologia");
+            ESPECIALIDADE es2 = new ESPECIALIDADE("Dermatologia");
+            ESPECIALIDADE es3 = new ESPECIALIDADE("Ginecologia");
+            ESPECIALIDADE es4 = new ESPECIALIDADE("Infectologia");
+            ESPECIALIDADE es5 = new ESPECIALIDADE("Neurologia");
+            ESPECIALIDADE es6 = new ESPECIALIDADE("Ortopedia");
+            ESPECIALIDADE es7 = new ESPECIALIDADE("Urologia");
             #endregion
 
+            #region Paises
             string json = System.IO.File.ReadAllText(System.IO.Directory.GetCurrentDirectory() + @"/wwwroot/Json/paises.json");
             var result = Newtonsoft.Json.JsonConvert.DeserializeObject<List<PAIS>>(json);
             foreach (var item in result) {
                 PAIS p = new PAIS(item.Pais.Replace("�", "ç"));
                 _context.AddRange(p);
             }
+            #endregion
 
             _context.AddRange(c1, c2, c3, c4);
             _context.AddRange(es1, es2, es3, es4, es5, es6, es7);
