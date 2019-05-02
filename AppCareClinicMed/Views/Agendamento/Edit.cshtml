@@ -1,60 +1,54 @@
-﻿@page
-@model AppCareClinicMed.Views.Agendamento.EditModel
+﻿@model AppCareClinicMed.Models.AGENDAMENTO
 
 @{
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
-
-<h4>AGENDAMENTO</h4>
+<h1>Editar</h1>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form method="post">
+        <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="AGENDAMENTO.Id" />
+            <input type="hidden" asp-for="Id" />
             <div class="form-group">
-                <label asp-for="AGENDAMENTO.retorno" class="control-label"></label>
-                <input asp-for="AGENDAMENTO.retorno" class="form-control" />
-                <span asp-validation-for="AGENDAMENTO.retorno" class="text-danger"></span>
+                <label class="control-label">Retorno</label>
+                <input asp-for="retorno" class="form-control" />
+                <span asp-validation-for="retorno" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="AGENDAMENTO.Data_agendamento" class="control-label"></label>
-                <input asp-for="AGENDAMENTO.Data_agendamento" class="form-control" />
-                <span asp-validation-for="AGENDAMENTO.Data_agendamento" class="text-danger"></span>
+                <label class="control-label">Data do agendamento</label>
+                <input asp-for="Data_agendamento" class="form-control" />
+                <span asp-validation-for="Data_agendamento" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="AGENDAMENTO.PACIENTEId" class="control-label"></label>
-                <select asp-for="AGENDAMENTO.PACIENTEId" class="form-control" asp-items="ViewBag.PACIENTEId"></select>
-                <span asp-validation-for="AGENDAMENTO.PACIENTEId" class="text-danger"></span>
+                <label class="control-label">Paciente</label>
+                <select asp-for="PACIENTEId" class="form-control" asp-items="ViewBag.PACIENTEId"></select>
+                <span asp-validation-for="PACIENTEId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="AGENDAMENTO.MEDICOId" class="control-label"></label>
-                <select asp-for="AGENDAMENTO.MEDICOId" class="form-control" asp-items="ViewBag.MEDICOId"></select>
-                <span asp-validation-for="AGENDAMENTO.MEDICOId" class="text-danger"></span>
+                <label class="control-label">Médico</label>
+                <select asp-for="MEDICOId" class="form-control" asp-items="ViewBag.MEDICOId"></select>
+                <span asp-validation-for="MEDICOId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="AGENDAMENTO.TIPO_CONSULTAId" class="control-label"></label>
-                <select asp-for="AGENDAMENTO.TIPO_CONSULTAId" class="form-control" asp-items="ViewBag.TIPO_CONSULTAId"></select>
-                <span asp-validation-for="AGENDAMENTO.TIPO_CONSULTAId" class="text-danger"></span>
+                <label class="control-label">Tipo de consulta</label>
+                <select asp-for="TIPO_CONSULTAId" class="form-control" asp-items="ViewBag.TIPO_CONSULTAId"></select>
+                <span asp-validation-for="TIPO_CONSULTAId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="AGENDAMENTO.CONVENIOId" class="control-label"></label>
-                <select asp-for="AGENDAMENTO.CONVENIOId" class="form-control" asp-items="ViewBag.CONVENIOId"></select>
-                <span asp-validation-for="AGENDAMENTO.CONVENIOId" class="text-danger"></span>
+                <label class="control-label">Convenio</label>
+                <select asp-for="CONVENIOId" class="form-control" asp-items="ViewBag.CONVENIOId"></select>
+                <span asp-validation-for="CONVENIOId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Salvar" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-page="./Index">Back to List</a>
+    <a asp-action="Index">Voltar</a>
 </div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}

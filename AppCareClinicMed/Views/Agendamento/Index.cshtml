@@ -1,66 +1,70 @@
-﻿@page
-@model AppCareClinicMed.Views.Agendamento.IndexModel
+﻿@model IEnumerable<AppCareClinicMed.Models.AGENDAMENTO>
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Agendamento do dia</h1>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-action="Create">Cadastrar</a>
 </p>
+<br />
+<div>
+    <a asp-action="GetAll" class="btn btn-primary">Mostrar todos</a>
+</div>
+<br />
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.AGENDAMENTO[0].retorno)
+                Retorno
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.AGENDAMENTO[0].Data_agendamento)
+                Data do agendamento
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.AGENDAMENTO[0].Paciente)
+                Paciente
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.AGENDAMENTO[0].Medico)
+                Médico
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.AGENDAMENTO[0].Tipo_consulta)
+                Tipo de consulta
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.AGENDAMENTO[0].Convenio)
+                Convenio
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.AGENDAMENTO) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.retorno)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Data_agendamento)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Paciente.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Medico.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Tipo_consulta.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Convenio.Id)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.retorno)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Data_agendamento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Paciente.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Medico.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tipo_consulta.Descricao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Convenio.Descricao)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

@@ -1,55 +1,53 @@
-﻿@page
-@model AppCareClinicMed.Views.Agendamento.CreateModel
+﻿@model AppCareClinicMed.Models.AGENDAMENTO
 
 @{
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1>Cadastrar</h1>
 
-<h4>AGENDAMENTO</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form method="post">
+        <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="AGENDAMENTO.retorno" class="control-label"></label>
-                <input asp-for="AGENDAMENTO.retorno" class="form-control" />
-                <span asp-validation-for="AGENDAMENTO.retorno" class="text-danger"></span>
+                <label class="control-label">Retorno</label>
+                <select asp-for="retorno" class="form-control">
+                    <option value="Sim">Sim</option>
+                    <option value="Nao">Não</option>
+                </select>
+                <span asp-validation-for="retorno" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="AGENDAMENTO.Data_agendamento" class="control-label"></label>
-                <input asp-for="AGENDAMENTO.Data_agendamento" class="form-control" />
-                <span asp-validation-for="AGENDAMENTO.Data_agendamento" class="text-danger"></span>
+                <label class="control-label">Data do agendamento</label>
+                <input asp-for="Data_agendamento" class="form-control" />
+                <span asp-validation-for="Data_agendamento" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="AGENDAMENTO.PACIENTEId" class="control-label"></label>
-                <select asp-for="AGENDAMENTO.PACIENTEId" class ="form-control" asp-items="ViewBag.PACIENTEId"></select>
+                <label class="control-label">Paciente</label>
+                <select asp-for="PACIENTEId" class ="form-control" asp-items="ViewBag.PACIENTEId"></select>
             </div>
             <div class="form-group">
-                <label asp-for="AGENDAMENTO.MEDICOId" class="control-label"></label>
-                <select asp-for="AGENDAMENTO.MEDICOId" class ="form-control" asp-items="ViewBag.MEDICOId"></select>
+                <label class="control-label">Médico</label>
+                <select asp-for="MEDICOId" class ="form-control" asp-items="ViewBag.MEDICOId"></select>
             </div>
             <div class="form-group">
-                <label asp-for="AGENDAMENTO.TIPO_CONSULTAId" class="control-label"></label>
-                <select asp-for="AGENDAMENTO.TIPO_CONSULTAId" class ="form-control" asp-items="ViewBag.TIPO_CONSULTAId"></select>
+                <label class="control-label">Tipo de Consulta</label>
+                <select asp-for="TIPO_CONSULTAId" class ="form-control" asp-items="ViewBag.TIPO_CONSULTAId"></select>
             </div>
             <div class="form-group">
-                <label asp-for="AGENDAMENTO.CONVENIOId" class="control-label"></label>
-                <select asp-for="AGENDAMENTO.CONVENIOId" class ="form-control" asp-items="ViewBag.CONVENIOId"></select>
+                <label class="control-label">Convenio</label>
+                <select asp-for="CONVENIOId" class ="form-control" asp-items="ViewBag.CONVENIOId"></select>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Cadastrar" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-page="Index">Back to List</a>
+    <a asp-action="Index">Voltar</a>
 </div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}

@@ -1,4 +1,4 @@
-﻿@model AppCareClinicMed.Models.HISTORICO_PACIENTE
+﻿@model IEnumerable<AppCareClinicMed.Models.HISTORICO_PACIENTE>
 
 @{
     ViewData["Title"] = "Details";
@@ -8,34 +8,36 @@
 
 <div>
     <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            Paciente
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Paciente.Nome)
-        </dd>
-        <dt class="col-sm-2">
-            Médico
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Medico.Nome)
-        </dd>
-        <dt class="col-sm-2">
-            Data
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Data_historico)
-        </dd>
-        <dt class="col-sm-2">
-            Histórico
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Historico)
-        </dd>
-    </dl>
+    @foreach (var item in Model) {
+        <dl class="row">
+            <dt class="col-sm-2">
+                Paciente
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(modelItem => item.Paciente.Nome)
+            </dd>
+            <dt class="col-sm-2">
+                Médico
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(modelItem => item.Medico.Nome)
+            </dd>
+            <dt class="col-sm-2">
+                Data
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(modelItem => item.Data_historico)
+            </dd>
+            <dt class="col-sm-2">
+                Histórico
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(modelItem => item.Historico)
+            </dd>
+        </dl>
+        <a asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+}
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Editar</a> |
     <a asp-action="Index">Voltar</a>
 </div>

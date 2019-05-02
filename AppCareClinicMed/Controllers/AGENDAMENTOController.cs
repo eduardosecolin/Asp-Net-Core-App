@@ -11,6 +11,9 @@ namespace AppCareClinicMed.Controllers
 {
     public class AGENDAMENTOController : Controller
     {
+
+        #region Header
+
         private readonly AppCareClinicMedContext _context;
 
         public AGENDAMENTOController(AppCareClinicMedContext context)
@@ -18,9 +21,20 @@ namespace AppCareClinicMed.Controllers
             _context = context;
         }
 
+        #endregion
+
+        #region Get and Details
+
         // GET: AGENDAMENTO
         public async Task<IActionResult> Index()
         {
+            //var appCareClinicMedContext = _context.AGENDAMENTO.Include(a => a.Convenio).Include(a => a.Medico).Include(a => a.Paciente).Include(a => a.Tipo_consulta).OrderBy(x => x.Data_agendamento.ToShortDateString() == DateTime.Now.ToShortDateString());
+            var lista =  _context.AGENDAMENTO.Include(a => a.Convenio).Include(a => a.Medico).Include(a => a.Paciente).Include(a => a.Tipo_consulta).Where(x => x.Data_agendamento.ToShortDateString().Equals(DateTime.Now.ToShortDateString())).ToListAsync();
+            return View(await lista);
+
+        }
+
+        public async Task<IActionResult> GetAll() {
             var appCareClinicMedContext = _context.AGENDAMENTO.Include(a => a.Convenio).Include(a => a.Medico).Include(a => a.Paciente).Include(a => a.Tipo_consulta);
             return View(await appCareClinicMedContext.ToListAsync());
         }
@@ -47,13 +61,17 @@ namespace AppCareClinicMed.Controllers
             return View(aGENDAMENTO);
         }
 
+        #endregion
+
+        #region Create / Post
+
         // GET: AGENDAMENTO/Create
         public IActionResult Create()
         {
-            ViewData["CONVENIOId"] = new SelectList(_context.CONVENIO, "Id", "Id");
-            ViewData["MEDICOId"] = new SelectList(_context.MEDICO, "Id", "Id");
-            ViewData["PACIENTEId"] = new SelectList(_context.PACIENTE, "Id", "Id");
-            ViewData["TIPO_CONSULTAId"] = new SelectList(_context.TIPO_CONSULTA, "Id", "Id");
+            ViewData["CONVENIOId"] = new SelectList(_context.CONVENIO.OrderBy(x => x.Descricao), "Id", "Descricao");
+            ViewData["MEDICOId"] = new SelectList(_context.MEDICO.OrderBy(x => x.Nome), "Id", "Nome");
+            ViewData["PACIENTEId"] = new SelectList(_context.PACIENTE.OrderBy(x => x.Nome), "Id", "Nome");
+            ViewData["TIPO_CONSULTAId"] = new SelectList(_context.TIPO_CONSULTA.OrderBy(x => x.Descricao), "Id", "Descricao");
             return View();
         }
 
@@ -70,12 +88,16 @@ namespace AppCareClinicMed.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CONVENIOId"] = new SelectList(_context.CONVENIO, "Id", "Id", aGENDAMENTO.CONVENIOId);
-            ViewData["MEDICOId"] = new SelectList(_context.MEDICO, "Id", "Id", aGENDAMENTO.MEDICOId);
-            ViewData["PACIENTEId"] = new SelectList(_context.PACIENTE, "Id", "Id", aGENDAMENTO.PACIENTEId);
-            ViewData["TIPO_CONSULTAId"] = new SelectList(_context.TIPO_CONSULTA, "Id", "Id", aGENDAMENTO.TIPO_CONSULTAId);
+            ViewData["CONVENIOId"] = new SelectList(_context.CONVENIO.OrderBy(x => x.Descricao), "Id", "Descricao");
+            ViewData["MEDICOId"] = new SelectList(_context.MEDICO.OrderBy(x => x.Nome), "Id", "Nome");
+            ViewData["PACIENTEId"] = new SelectList(_context.PACIENTE.OrderBy(x => x.Nome), "Id", "Nome");
+            ViewData["TIPO_CONSULTAId"] = new SelectList(_context.TIPO_CONSULTA.OrderBy(x => x.Descricao), "Id", "Descricao");
             return View(aGENDAMENTO);
         }
+
+        #endregion
+
+        #region Edit / Put
 
         // GET: AGENDAMENTO/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -90,10 +112,10 @@ namespace AppCareClinicMed.Controllers
             {
                 return NotFound();
             }
-            ViewData["CONVENIOId"] = new SelectList(_context.CONVENIO, "Id", "Id", aGENDAMENTO.CONVENIOId);
-            ViewData["MEDICOId"] = new SelectList(_context.MEDICO, "Id", "Id", aGENDAMENTO.MEDICOId);
-            ViewData["PACIENTEId"] = new SelectList(_context.PACIENTE, "Id", "Id", aGENDAMENTO.PACIENTEId);
-            ViewData["TIPO_CONSULTAId"] = new SelectList(_context.TIPO_CONSULTA, "Id", "Id", aGENDAMENTO.TIPO_CONSULTAId);
+            ViewData["CONVENIOId"] = new SelectList(_context.CONVENIO.OrderBy(x => x.Descricao), "Id", "Descricao");
+            ViewData["MEDICOId"] = new SelectList(_context.MEDICO.OrderBy(x => x.Nome), "Id", "Nome");
+            ViewData["PACIENTEId"] = new SelectList(_context.PACIENTE.OrderBy(x => x.Nome), "Id", "Nome");
+            ViewData["TIPO_CONSULTAId"] = new SelectList(_context.TIPO_CONSULTA.OrderBy(x => x.Descricao), "Id", "Descricao");
             return View(aGENDAMENTO);
         }
 
@@ -129,12 +151,16 @@ namespace AppCareClinicMed.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CONVENIOId"] = new SelectList(_context.CONVENIO, "Id", "Id", aGENDAMENTO.CONVENIOId);
-            ViewData["MEDICOId"] = new SelectList(_context.MEDICO, "Id", "Id", aGENDAMENTO.MEDICOId);
-            ViewData["PACIENTEId"] = new SelectList(_context.PACIENTE, "Id", "Id", aGENDAMENTO.PACIENTEId);
-            ViewData["TIPO_CONSULTAId"] = new SelectList(_context.TIPO_CONSULTA, "Id", "Id", aGENDAMENTO.TIPO_CONSULTAId);
+            ViewData["CONVENIOId"] = new SelectList(_context.CONVENIO.OrderBy(x => x.Descricao), "Id", "Descricao");
+            ViewData["MEDICOId"] = new SelectList(_context.MEDICO.OrderBy(x => x.Nome), "Id", "Nome");
+            ViewData["PACIENTEId"] = new SelectList(_context.PACIENTE.OrderBy(x => x.Nome), "Id", "Nome");
+            ViewData["TIPO_CONSULTAId"] = new SelectList(_context.TIPO_CONSULTA.OrderBy(x => x.Descricao), "Id", "Descricao");
             return View(aGENDAMENTO);
         }
+
+        #endregion
+
+        #region Delete
 
         // GET: AGENDAMENTO/Delete/5
         public async Task<IActionResult> Delete(int? id)
@@ -169,9 +195,15 @@ namespace AppCareClinicMed.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        #endregion
+
+        #region Others Methods
+
         private bool AGENDAMENTOExists(int id)
         {
             return _context.AGENDAMENTO.Any(e => e.Id == id);
         }
+
+        #endregion
     }
 }

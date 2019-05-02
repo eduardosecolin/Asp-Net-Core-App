@@ -1,0 +1,66 @@
+﻿@model IEnumerable<AppCareClinicMed.Models.AGENDAMENTO>
+
+@{
+    ViewData["Title"] = "GetAll";
+}
+
+<h1>Agendamentos (Geral)</h1>
+
+<div>
+    <a asp-action="Create">Cadastrar</a>|
+    <a asp-action="Index">Voltar</a>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Retorno
+            </th>
+            <th>
+                Data do agendamento
+            </th>
+            <th>
+                Paciente
+            </th>
+            <th>
+                Médico
+            </th>
+            <th>
+                Consulta
+            </th>
+            <th>
+                Convenio
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.retorno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Data_agendamento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Paciente.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Medico.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tipo_consulta.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Convenio.Descricao)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
