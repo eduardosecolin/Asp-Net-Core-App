@@ -1,91 +1,89 @@
-﻿@page
-@model AppCareClinicMed.Views.Paciente.DetailsModel
+﻿@model AppCareClinicMed.Models.PACIENTE
 
 @{
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<h1>Detalhes</h1>
 
 <div>
-    <h4>PACIENTE</h4>
     <hr />
     <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.PACIENTE.Nome)
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nome)
         </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.PACIENTE.Nome)
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nome)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.PACIENTE.Data_nascimento)
+        <dt class = "col-sm-2">
+            Data de Nascimento
         </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.PACIENTE.Data_nascimento)
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Data_nascimento)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.PACIENTE.Sexo)
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Sexo)
         </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.PACIENTE.Sexo)
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Sexo)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.PACIENTE.Estado_civil)
+        <dt class = "col-sm-2">
+            Estado Civil
         </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.PACIENTE.Estado_civil)
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Estado_civil)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.PACIENTE.Endereco)
+        <dt class = "col-sm-2">
+            Endereço
         </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.PACIENTE.Endereco)
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Endereco)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.PACIENTE.Numero)
+        <dt class = "col-sm-2">
+            Número
         </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.PACIENTE.Numero)
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Numero)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.PACIENTE.Cidade)
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Cidade)
         </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.PACIENTE.Cidade)
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Cidade)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.PACIENTE.Estado)
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Estado)
         </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.PACIENTE.Estado.Id)
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Estado.Estado)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.PACIENTE.Pais)
+        <dt class = "col-sm-2">
+            País
         </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.PACIENTE.Pais.Id)
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Pais.Pais)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.PACIENTE.Cpf)
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Cpf)
         </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.PACIENTE.Cpf)
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Cpf)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.PACIENTE.Rg)
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Rg)
         </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.PACIENTE.Rg)
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Rg)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.PACIENTE.Convenio)
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Convenio)
         </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.PACIENTE.Convenio.Id)
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Convenio.Descricao)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.PACIENTE.Id">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Editar</a> |
+    <a asp-action="Index">Voltar</a>
 </div>

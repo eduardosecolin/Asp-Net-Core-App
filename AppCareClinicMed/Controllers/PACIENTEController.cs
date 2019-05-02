@@ -60,9 +60,9 @@ namespace AppCareClinicMed.Controllers
         // GET: PACIENTE/Create
         public IActionResult Create()
         {
-            ViewData["CONVENIOId"] = new SelectList(_context.CONVENIO, "Id", "Descricao");
-            ViewData["ESTADOSId"] = new SelectList(_context.ESTADOS, "Id", "Estado");
-            ViewData["PAISId"] = new SelectList(_context.PAIS, "Id", "Pais");
+            ViewData["CONVENIOId"] = new SelectList(_context.CONVENIO.OrderBy(x => x.Descricao), "Id", "Descricao");
+            ViewData["ESTADOSId"] = new SelectList(_context.ESTADOS.OrderBy(x => x.Estado), "Id", "Estado");
+            ViewData["PAISId"] = new SelectList(_context.PAIS.OrderBy(x => x.Pais), "Id", "Pais");
             return View();
         }
 
@@ -79,9 +79,9 @@ namespace AppCareClinicMed.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CONVENIOId"] = new SelectList(_context.CONVENIO, "Id", "Descricao", pACIENTE.CONVENIOId);
-            ViewData["ESTADOSId"] = new SelectList(_context.ESTADOS, "Id", "Estado", pACIENTE.ESTADOSId);
-            ViewData["PAISId"] = new SelectList(_context.PAIS, "Id", "Pais", pACIENTE.PAISId);
+            ViewData["CONVENIOId"] = new SelectList(_context.CONVENIO.OrderBy(x => x.Descricao), "Id", "Descricao", pACIENTE.CONVENIOId);
+            ViewData["ESTADOSId"] = new SelectList(_context.ESTADOS.OrderBy(x => x.Estado), "Id", "Estado", pACIENTE.ESTADOSId);
+            ViewData["PAISId"] = new SelectList(_context.PAIS.OrderBy(x => x.Pais), "Id", "Pais", pACIENTE.PAISId);
             return View(pACIENTE);
         }
 
@@ -102,9 +102,9 @@ namespace AppCareClinicMed.Controllers
             {
                 return NotFound();
             }
-            ViewData["CONVENIOId"] = new SelectList(_context.CONVENIO, "Id", "Descricao", pACIENTE.CONVENIOId);
-            ViewData["ESTADOSId"] = new SelectList(_context.ESTADOS, "Id", "Estado", pACIENTE.ESTADOSId);
-            ViewData["PAISId"] = new SelectList(_context.PAIS, "Id", "Pais", pACIENTE.PAISId);
+            ViewData["CONVENIOId"] = new SelectList(_context.CONVENIO.OrderBy(x => x.Descricao), "Id", "Descricao", pACIENTE.CONVENIOId);
+            ViewData["ESTADOSId"] = new SelectList(_context.ESTADOS.OrderBy(x => x.Estado), "Id", "Estado", pACIENTE.ESTADOSId);
+            ViewData["PAISId"] = new SelectList(_context.PAIS.OrderBy(x => x.Pais), "Id", "Pais", pACIENTE.PAISId);
             return View(pACIENTE);
         }
 
@@ -140,9 +140,9 @@ namespace AppCareClinicMed.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CONVENIOId"] = new SelectList(_context.CONVENIO, "Id", "Descricao", pACIENTE.CONVENIOId);
-            ViewData["ESTADOSId"] = new SelectList(_context.ESTADOS, "Id", "Estado", pACIENTE.ESTADOSId);
-            ViewData["PAISId"] = new SelectList(_context.PAIS, "Id", "Pais", pACIENTE.PAISId);
+            ViewData["CONVENIOId"] = new SelectList(_context.CONVENIO.OrderBy(x => x.Descricao), "Id", "Descricao", pACIENTE.CONVENIOId);
+            ViewData["ESTADOSId"] = new SelectList(_context.ESTADOS.OrderBy(x => x.Estado), "Id", "Estado", pACIENTE.ESTADOSId);
+            ViewData["PAISId"] = new SelectList(_context.PAIS.OrderBy(x => x.Pais), "Id", "Pais", pACIENTE.PAISId);
             return View(pACIENTE);
         }
 

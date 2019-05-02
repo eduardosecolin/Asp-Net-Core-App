@@ -1,0 +1,48 @@
+﻿@model AppCareClinicMed.Models.HISTORICO_PACIENTE
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Editar</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label class="control-label">Paciente</label>
+                <select asp-for="PACIENTEId" class="form-control" asp-items="ViewBag.PACIENTEId"></select>
+                <span asp-validation-for="PACIENTEId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Médico</label>
+                <select asp-for="MEDICOId" class="form-control" asp-items="ViewBag.MEDICOId"></select>
+                <span asp-validation-for="MEDICOId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Data</label>
+                <input asp-for="Data_historico" class="form-control" />
+                <span asp-validation-for="Data_historico" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Histórico</label>
+                <textarea cols="40" rows="5" asp-for="Historico" class="form-control"></textarea>
+                <span asp-validation-for="Historico" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Voltar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,10 +1,10 @@
-﻿@model IEnumerable<AppCareClinicMed.Models.MEDICO>
+﻿@model IEnumerable<AppCareClinicMed.Models.HISTORICO_PACIENTE>
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Médicos</h1>
+<h1>Histórico de Pacientes</h1>
 
 <p>
     <a asp-action="Create">Cadastrar</a>
@@ -13,13 +13,13 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Nome)
+                Paciente
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Crm)
+                Médico
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Especialidade)
+                data
             </th>
             <th></th>
         </tr>
@@ -28,13 +28,13 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Nome)
+                @Html.DisplayFor(modelItem => item.Paciente.Nome)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Crm)
+                @Html.DisplayFor(modelItem => item.Medico.Nome)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Especialidade.Descricao)
+                @Html.DisplayFor(modelItem => item.Data_historico)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |

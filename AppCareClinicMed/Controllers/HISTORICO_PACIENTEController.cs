@@ -9,13 +9,14 @@ using AppCareClinicMed.Models;
 
 namespace AppCareClinicMed.Controllers
 {
-    public class MEDICOController : Controller
+    public class HISTORICO_PACIENTEController : Controller
     {
+
         #region Header
 
         private readonly AppCareClinicMedContext _context;
 
-        public MEDICOController(AppCareClinicMedContext context)
+        public HISTORICO_PACIENTEController(AppCareClinicMedContext context)
         {
             _context = context;
         }
@@ -24,14 +25,14 @@ namespace AppCareClinicMed.Controllers
 
         #region Get and Details
 
-        // GET: MEDICO
+        // GET: HISTORICO_PACIENTE
         public async Task<IActionResult> Index()
         {
-            var appCareClinicMedContext = _context.MEDICO.Include(m => m.Especialidade);
+            var appCareClinicMedContext = _context.HISTORICO_PACIENTE.Include(h => h.Medico).Include(h => h.Paciente).OrderBy(x => x.Paciente.Nome);
             return View(await appCareClinicMedContext.ToListAsync());
         }
 
-        // GET: MEDICO/Details/5
+        // GET: HISTORICO_PACIENTE/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -39,50 +40,53 @@ namespace AppCareClinicMed.Controllers
                 return NotFound();
             }
 
-            var mEDICO = await _context.MEDICO
-                .Include(m => m.Especialidade)
+            var hISTORICO_PACIENTE = await _context.HISTORICO_PACIENTE
+                .Include(h => h.Medico)
+                .Include(h => h.Paciente)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (mEDICO == null)
+            if (hISTORICO_PACIENTE == null)
             {
                 return NotFound();
             }
 
-            return View(mEDICO);
+            return View(hISTORICO_PACIENTE);
         }
 
         #endregion
 
         #region Create / Post
 
-        // GET: MEDICO/Create
+        // GET: HISTORICO_PACIENTE/Create
         public IActionResult Create()
         {
-            ViewData["ESPECIALIDADEId"] = new SelectList(_context.ESPECIALIDADE.OrderBy(x => x.Descricao), "Id", "Descricao");
+            ViewData["MEDICOId"] = new SelectList(_context.MEDICO.OrderBy(x => x.Nome), "Id", "Nome");
+            ViewData["PACIENTEId"] = new SelectList(_context.PACIENTE.OrderBy(x => x.Nome), "Id", "Nome");
             return View();
         }
 
-        // POST: MEDICO/Create
+        // POST: HISTORICO_PACIENTE/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome,Crm,ESPECIALIDADEId")] MEDICO mEDICO)
+        public async Task<IActionResult> Create([Bind("Id,Historico,Data_historico,PACIENTEId,MEDICOId")] HISTORICO_PACIENTE hISTORICO_PACIENTE)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(mEDICO);
+                _context.Add(hISTORICO_PACIENTE);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ESPECIALIDADEId"] = new SelectList(_context.ESPECIALIDADE.OrderBy(x => x.Descricao), "Id", "Descricao", mEDICO.ESPECIALIDADEId);
-            return View(mEDICO);
+            ViewData["MEDICOId"] = new SelectList(_context.MEDICO.OrderBy(x => x.Nome), "Id", "Nome", hISTORICO_PACIENTE.MEDICOId);
+            ViewData["PACIENTEId"] = new SelectList(_context.PACIENTE.OrderBy(x => x.Nome), "Id", "Nome", hISTORICO_PACIENTE.PACIENTEId);
+            return View(hISTORICO_PACIENTE);
         }
 
         #endregion
 
         #region Edit / Put
 
-        // GET: MEDICO/Edit/5
+        // GET: HISTORICO_PACIENTE/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -90,23 +94,24 @@ namespace AppCareClinicMed.Controllers
                 return NotFound();
             }
 
-            var mEDICO = await _context.MEDICO.FindAsync(id);
-            if (mEDICO == null)
+            var hISTORICO_PACIENTE = await _context.HISTORICO_PACIENTE.FindAsync(id);
+            if (hISTORICO_PACIENTE == null)
             {
                 return NotFound();
             }
-            ViewData["ESPECIALIDADEId"] = new SelectList(_context.ESPECIALIDADE.OrderBy(x => x.Descricao), "Id", "Descricao", mEDICO.ESPECIALIDADEId);
-            return View(mEDICO);
+            ViewData["MEDICOId"] = new SelectList(_context.MEDICO.OrderBy(x => x.Nome), "Id", "Nome", hISTORICO_PACIENTE.MEDICOId);
+            ViewData["PACIENTEId"] = new SelectList(_context.PACIENTE.OrderBy(x => x.Nome), "Id", "Nome", hISTORICO_PACIENTE.PACIENTEId);
+            return View(hISTORICO_PACIENTE);
         }
 
-        // POST: MEDICO/Edit/5
+        // POST: HISTORICO_PACIENTE/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Crm,ESPECIALIDADEId")] MEDICO mEDICO)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Historico,Data_historico,PACIENTEId,MEDICOId")] HISTORICO_PACIENTE hISTORICO_PACIENTE)
         {
-            if (id != mEDICO.Id)
+            if (id != hISTORICO_PACIENTE.Id)
             {
                 return NotFound();
             }
@@ -115,12 +120,12 @@ namespace AppCareClinicMed.Controllers
             {
                 try
                 {
-                    _context.Update(mEDICO);
+                    _context.Update(hISTORICO_PACIENTE);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!MEDICOExists(mEDICO.Id))
+                    if (!HISTORICO_PACIENTEExists(hISTORICO_PACIENTE.Id))
                     {
                         return NotFound();
                     }
@@ -131,15 +136,16 @@ namespace AppCareClinicMed.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ESPECIALIDADEId"] = new SelectList(_context.ESPECIALIDADE.OrderBy(x => x.Descricao), "Id", "Descricao", mEDICO.ESPECIALIDADEId);
-            return View(mEDICO);
+            ViewData["MEDICOId"] = new SelectList(_context.MEDICO.OrderBy(x => x.Nome), "Id", "Nome", hISTORICO_PACIENTE.MEDICOId);
+            ViewData["PACIENTEId"] = new SelectList(_context.PACIENTE.OrderBy(x => x.Nome), "Id", "Nome", hISTORICO_PACIENTE.PACIENTEId);
+            return View(hISTORICO_PACIENTE);
         }
 
         #endregion
 
         #region Delete
 
-        // GET: MEDICO/Delete/5
+        // GET: HISTORICO_PACIENTE/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -147,24 +153,25 @@ namespace AppCareClinicMed.Controllers
                 return NotFound();
             }
 
-            var mEDICO = await _context.MEDICO
-                .Include(m => m.Especialidade)
+            var hISTORICO_PACIENTE = await _context.HISTORICO_PACIENTE
+                .Include(h => h.Medico)
+                .Include(h => h.Paciente)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (mEDICO == null)
+            if (hISTORICO_PACIENTE == null)
             {
                 return NotFound();
             }
 
-            return View(mEDICO);
+            return View(hISTORICO_PACIENTE);
         }
 
-        // POST: MEDICO/Delete/5
+        // POST: HISTORICO_PACIENTE/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var mEDICO = await _context.MEDICO.FindAsync(id);
-            _context.MEDICO.Remove(mEDICO);
+            var hISTORICO_PACIENTE = await _context.HISTORICO_PACIENTE.FindAsync(id);
+            _context.HISTORICO_PACIENTE.Remove(hISTORICO_PACIENTE);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
@@ -173,9 +180,9 @@ namespace AppCareClinicMed.Controllers
 
         #region Others Methods
 
-        private bool MEDICOExists(int id)
+        private bool HISTORICO_PACIENTEExists(int id)
         {
-            return _context.MEDICO.Any(e => e.Id == id);
+            return _context.HISTORICO_PACIENTE.Any(e => e.Id == id);
         }
 
         #endregion

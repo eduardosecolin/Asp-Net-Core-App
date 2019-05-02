@@ -77,8 +77,8 @@ namespace AppCareClinicMed.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ESTADOSId"] = new SelectList(_context.ESTADOS, "Id", "Estado", cLINICA.ESTADOSId);
-            ViewData["PAISId"] = new SelectList(_context.PAIS, "Id", "Pais", cLINICA.PAISId);
+            ViewData["ESTADOSId"] = new SelectList(_context.ESTADOS.OrderBy(x => x.Estado), "Id", "Estado", cLINICA.ESTADOSId);
+            ViewData["PAISId"] = new SelectList(_context.PAIS.OrderBy(x => x.Pais), "Id", "Pais", cLINICA.PAISId);
             return View(cLINICA);
         }
 
@@ -99,8 +99,8 @@ namespace AppCareClinicMed.Controllers
             {
                 return NotFound();
             }
-            ViewData["ESTADOSId"] = new SelectList(_context.ESTADOS, "Id", "Estado", cLINICA.ESTADOSId);
-            ViewData["PAISId"] = new SelectList(_context.PAIS, "Id", "Pais", cLINICA.PAISId);
+            ViewData["ESTADOSId"] = new SelectList(_context.ESTADOS.OrderBy(x => x.Estado), "Id", "Estado", cLINICA.ESTADOSId);
+            ViewData["PAISId"] = new SelectList(_context.PAIS.OrderBy(x => x.Pais), "Id", "Pais", cLINICA.PAISId);
             return View(cLINICA);
         }
 
@@ -136,8 +136,8 @@ namespace AppCareClinicMed.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ESTADOSId"] = new SelectList(_context.ESTADOS, "Id", "Estado", cLINICA.ESTADOSId);
-            ViewData["PAISId"] = new SelectList(_context.PAIS, "Id", "Pais", cLINICA.PAISId);
+            ViewData["ESTADOSId"] = new SelectList(_context.ESTADOS.OrderBy(x => x.Estado), "Id", "Estado", cLINICA.ESTADOSId);
+            ViewData["PAISId"] = new SelectList(_context.PAIS.OrderBy(x => x.Pais), "Id", "Pais", cLINICA.PAISId);
             return View(cLINICA);
         }
 

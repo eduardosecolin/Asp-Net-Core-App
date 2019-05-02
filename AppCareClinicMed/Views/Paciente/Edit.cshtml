@@ -1,88 +1,94 @@
-﻿@page
-@model AppCareClinicMed.Views.Paciente.EditModel
+﻿@model AppCareClinicMed.Models.PACIENTE
 
 @{
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<h1>Editar</h1>
 
-<h4>PACIENTE</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form method="post">
+        <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="PACIENTE.Id" />
+            <input type="hidden" asp-for="Id" />
             <div class="form-group">
-                <label asp-for="PACIENTE.Nome" class="control-label"></label>
-                <input asp-for="PACIENTE.Nome" class="form-control" />
-                <span asp-validation-for="PACIENTE.Nome" class="text-danger"></span>
+                <label asp-for="Nome" class="control-label"></label>
+                <input asp-for="Nome" class="form-control" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="PACIENTE.Data_nascimento" class="control-label"></label>
-                <input asp-for="PACIENTE.Data_nascimento" class="form-control" />
-                <span asp-validation-for="PACIENTE.Data_nascimento" class="text-danger"></span>
+                <label class="control-label">Data de Nascimento</label>
+                <input asp-for="Data_nascimento" class="form-control" />
+                <span asp-validation-for="Data_nascimento" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="PACIENTE.Sexo" class="control-label"></label>
-                <input asp-for="PACIENTE.Sexo" class="form-control" />
-                <span asp-validation-for="PACIENTE.Sexo" class="text-danger"></span>
+                <label asp-for="Sexo" class="control-label"></label>
+                <select asp-for="Sexo" class="form-control">
+                    <option value="">Selecione o sexo</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Feminino">Feminino</option>
+                    <option value="Outro Gênero"></option>
+                </select>
+                <span asp-validation-for="Sexo" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="PACIENTE.Estado_civil" class="control-label"></label>
-                <input asp-for="PACIENTE.Estado_civil" class="form-control" />
-                <span asp-validation-for="PACIENTE.Estado_civil" class="text-danger"></span>
+                <label class="control-label">Estado Civil</label>
+                <input asp-for="Estado_civil" class="form-control" />
+                <span asp-validation-for="Estado_civil" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="PACIENTE.Endereco" class="control-label"></label>
-                <input asp-for="PACIENTE.Endereco" class="form-control" />
-                <span asp-validation-for="PACIENTE.Endereco" class="text-danger"></span>
+                <label asp-for="Endereco" class="control-label"></label>
+                <select asp-for="Estado_civil" class="form-control">
+                    <option value="Casado">Casado(a)</option>
+                    <option value="Solteiro">Solteiro(a)</option>
+                </select>
+                <span asp-validation-for="Endereco" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="PACIENTE.Numero" class="control-label"></label>
-                <input asp-for="PACIENTE.Numero" class="form-control" />
-                <span asp-validation-for="PACIENTE.Numero" class="text-danger"></span>
+                <label class="control-label">Número</label>
+                <input asp-for="Numero" class="form-control" />
+                <span asp-validation-for="Numero" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="PACIENTE.Cidade" class="control-label"></label>
-                <input asp-for="PACIENTE.Cidade" class="form-control" />
-                <span asp-validation-for="PACIENTE.Cidade" class="text-danger"></span>
+                <label asp-for="Cidade" class="control-label"></label>
+                <input asp-for="Cidade" class="form-control" />
+                <span asp-validation-for="Cidade" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="PACIENTE.ESTADOSId" class="control-label"></label>
-                <select asp-for="PACIENTE.ESTADOSId" class="form-control" asp-items="ViewBag.ESTADOSId"></select>
-                <span asp-validation-for="PACIENTE.ESTADOSId" class="text-danger"></span>
+                <label class="control-label">Estado</label>
+                <select asp-for="ESTADOSId" class="form-control" asp-items="ViewBag.ESTADOSId"></select>
+                <span asp-validation-for="ESTADOSId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="PACIENTE.PAISId" class="control-label"></label>
-                <select asp-for="PACIENTE.PAISId" class="form-control" asp-items="ViewBag.PAISId"></select>
-                <span asp-validation-for="PACIENTE.PAISId" class="text-danger"></span>
+                <label class="control-label">País</label>
+                <select asp-for="PAISId" class="form-control" asp-items="ViewBag.PAISId"></select>
+                <span asp-validation-for="PAISId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="PACIENTE.Cpf" class="control-label"></label>
-                <input asp-for="PACIENTE.Cpf" class="form-control" />
-                <span asp-validation-for="PACIENTE.Cpf" class="text-danger"></span>
+                <label asp-for="Cpf" class="control-label"></label>
+                <input asp-for="Cpf" class="form-control" />
+                <span asp-validation-for="Cpf" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="PACIENTE.Rg" class="control-label"></label>
-                <input asp-for="PACIENTE.Rg" class="form-control" />
-                <span asp-validation-for="PACIENTE.Rg" class="text-danger"></span>
+                <label asp-for="Rg" class="control-label"></label>
+                <input asp-for="Rg" class="form-control" />
+                <span asp-validation-for="Rg" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="PACIENTE.CONVENIOId" class="control-label"></label>
-                <select asp-for="PACIENTE.CONVENIOId" class="form-control" asp-items="ViewBag.CONVENIOId"></select>
-                <span asp-validation-for="PACIENTE.CONVENIOId" class="text-danger"></span>
+                <label class="control-label">Convenio</label>
+                <select asp-for="CONVENIOId" class="form-control" asp-items="ViewBag.CONVENIOId"></select>
+                <span asp-validation-for="CONVENIOId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Salvar" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-page="./Index">Back to List</a>
+    <a asp-action="Index">Voltar</a>
 </div>
 
 @section Scripts {
