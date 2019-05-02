@@ -30,5 +30,9 @@ namespace AppCareClinicMed.Models {
         public CONVENIO Convenio { get; set; }
 
         public int CONVENIOId { get; set; }
+
+        public FORMA_PAGAMENTO Forma_pagamento { get; set; }
+
+        public int FORMA_PAGAMENTOId { get; set; }
     }
 }
