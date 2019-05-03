@@ -19,7 +19,6 @@ namespace AppCareClinicMed.Models {
 
         [StringLength(20)]
         [Required(ErrorMessage = "Informe o CNPJ")]
-        [DisplayFormat(DataFormatString = "{0:00\\.000\\.000\\/0000-00}", ApplyFormatInEditMode = true)]
         public string Cnpj { get; set; }
 
         [StringLength(50)]
@@ -27,6 +26,15 @@ namespace AppCareClinicMed.Models {
         public string Endereco { get; set; }
 
         public int Numero { get; set; }
+
+        [StringLength(30)]
+        [Required(ErrorMessage = "Informe o bairro")]
+        public string Bairro { get; set; }
+
+        [StringLength(50)]
+        [DataType(DataType.EmailAddress)]
+        [Required(ErrorMessage = "Informe o e-mail")]
+        public string Email { get; set; }
 
         [StringLength(50)]
         [Required(ErrorMessage = "Informe a cidade")]

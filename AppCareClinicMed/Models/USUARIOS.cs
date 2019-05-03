@@ -18,5 +18,10 @@ namespace AppCareClinicMed.Models {
         [DataType(DataType.Password)]
         [Required(ErrorMessage = "Informe a senha")]
         public string senha { get; set; }
+
+        [StringLength(50)]
+        [DataType(DataType.EmailAddress)]
+        [Required(ErrorMessage = "Informe o e-mail")]
+        public string Email { get; set; }
     }
 }

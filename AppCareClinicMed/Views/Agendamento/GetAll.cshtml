@@ -14,16 +14,13 @@
     <thead>
         <tr>
             <th>
-                Retorno
-            </th>
-            <th>
-                Data do agendamento
-            </th>
-            <th>
                 Paciente
             </th>
             <th>
                 Médico
+            </th>
+            <th>
+                Data do agendamento
             </th>
             <th>
                 Consulta
@@ -34,6 +31,9 @@
             <th>
                 Forma de pagamento
             </th>
+            <th>
+                Retorno
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -41,16 +41,13 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.retorno)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Data_agendamento)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Paciente.Nome)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Medico.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Data_agendamento)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Tipo_consulta.Descricao)
@@ -60,6 +57,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Forma_pagamento.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.retorno)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |

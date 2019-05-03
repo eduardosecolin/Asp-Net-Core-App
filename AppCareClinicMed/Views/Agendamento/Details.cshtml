@@ -10,18 +10,6 @@
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
-            Retorno
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.retorno)
-        </dd>
-        <dt class="col-sm-2">
-            Data do agendamento
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Data_agendamento)
-        </dd>
-        <dt class="col-sm-2">
             Paciente
         </dt>
         <dd class="col-sm-10">
@@ -32,6 +20,12 @@
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Medico.Nome)
+        </dd>
+        <dt class="col-sm-2">
+            Data do agendamento
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Data_agendamento)
         </dd>
         <dt class="col-sm-2">
             Tipo de consulta
@@ -50,6 +44,12 @@
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Forma_pagamento.Descricao)
+        </dd>
+        <dt class="col-sm-2">
+            Retorno
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.retorno)
         </dd>
     </dl>
 </div>

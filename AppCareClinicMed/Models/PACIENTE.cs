@@ -33,6 +33,15 @@ namespace AppCareClinicMed.Models {
 
         public int Numero { get; set; }
 
+        [StringLength(30)]
+        [Required(ErrorMessage = "Informe o bairro")]
+        public string Bairro { get; set; }
+
+        [StringLength(50)]
+        [DataType(DataType.EmailAddress)]
+        [Required(ErrorMessage = "Informe o e-mail")]
+        public string Email { get; set; }
+
         [StringLength(50)]
         [Required(ErrorMessage = "Informe a cidade")]
         public string Cidade { get; set; }
