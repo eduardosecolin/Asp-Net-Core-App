@@ -11,9 +11,12 @@ namespace AppCareClinicMed.Models {
         public int Id { get; set; }
 
         [StringLength(20)]
+        [Required(ErrorMessage = "Informe o usuário")]
         public string usuario { get; set; }
 
         [StringLength(20)]
+        [DataType(DataType.Password)]
+        [Required(ErrorMessage = "Informe a senha")]
         public string senha { get; set; }
     }
 }

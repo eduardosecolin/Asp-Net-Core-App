@@ -29,13 +29,13 @@ namespace AppCareClinicMed.Controllers
         public async Task<IActionResult> Index()
         {
             //var appCareClinicMedContext = _context.AGENDAMENTO.Include(a => a.Convenio).Include(a => a.Medico).Include(a => a.Paciente).Include(a => a.Tipo_consulta).OrderBy(x => x.Data_agendamento.ToShortDateString() == DateTime.Now.ToShortDateString());
-            var lista =  _context.AGENDAMENTO.Include(a => a.Convenio).Include(a => a.Medico).Include(a => a.Paciente).Include(a => a.Tipo_consulta).Where(x => x.Data_agendamento.ToShortDateString().Equals(DateTime.Now.ToShortDateString())).ToListAsync();
+            var lista =  _context.AGENDAMENTO.Include(a => a.Convenio).Include(a => a.Medico).Include(a => a.Paciente).Include(a => a.Tipo_consulta).Include(a => a.Forma_pagamento).Where(x => x.Data_agendamento.ToShortDateString().Equals(DateTime.Now.ToShortDateString())).ToListAsync();
             return View(await lista);
 
         }
 
         public async Task<IActionResult> GetAll() {
-            var appCareClinicMedContext = _context.AGENDAMENTO.Include(a => a.Convenio).Include(a => a.Medico).Include(a => a.Paciente).Include(a => a.Tipo_consulta);
+            var appCareClinicMedContext = _context.AGENDAMENTO.Include(a => a.Convenio).Include(a => a.Medico).Include(a => a.Paciente).Include(a => a.Tipo_consulta).Include(a => a.Forma_pagamento);
             return View(await appCareClinicMedContext.ToListAsync());
         }
 
@@ -72,6 +72,7 @@ namespace AppCareClinicMed.Controllers
             ViewData["MEDICOId"] = new SelectList(_context.MEDICO.OrderBy(x => x.Nome), "Id", "Nome");
             ViewData["PACIENTEId"] = new SelectList(_context.PACIENTE.OrderBy(x => x.Nome), "Id", "Nome");
             ViewData["TIPO_CONSULTAId"] = new SelectList(_context.TIPO_CONSULTA.OrderBy(x => x.Descricao), "Id", "Descricao");
+            ViewData["FORMA_PAGAMENTOId"] = new SelectList(_context.FORMA_PAGAMENTO.OrderBy(x => x.Descricao), "Id", "Descricao");
             return View();
         }
 
@@ -80,7 +81,7 @@ namespace AppCareClinicMed.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,retorno,Data_agendamento,PACIENTEId,MEDICOId,TIPO_CONSULTAId,CONVENIOId")] AGENDAMENTO aGENDAMENTO)
+        public async Task<IActionResult> Create([Bind("Id,retorno,Data_agendamento,PACIENTEId,MEDICOId,TIPO_CONSULTAId,CONVENIOId,FORMA_PAGAMENTOId")] AGENDAMENTO aGENDAMENTO)
         {
             if (ModelState.IsValid)
             {
@@ -92,6 +93,7 @@ namespace AppCareClinicMed.Controllers
             ViewData["MEDICOId"] = new SelectList(_context.MEDICO.OrderBy(x => x.Nome), "Id", "Nome");
             ViewData["PACIENTEId"] = new SelectList(_context.PACIENTE.OrderBy(x => x.Nome), "Id", "Nome");
             ViewData["TIPO_CONSULTAId"] = new SelectList(_context.TIPO_CONSULTA.OrderBy(x => x.Descricao), "Id", "Descricao");
+            ViewData["FORMA_PAGAMENTOId"] = new SelectList(_context.FORMA_PAGAMENTO.OrderBy(x => x.Descricao), "Id", "Descricao");
             return View(aGENDAMENTO);
         }
 
@@ -116,6 +118,7 @@ namespace AppCareClinicMed.Controllers
             ViewData["MEDICOId"] = new SelectList(_context.MEDICO.OrderBy(x => x.Nome), "Id", "Nome");
             ViewData["PACIENTEId"] = new SelectList(_context.PACIENTE.OrderBy(x => x.Nome), "Id", "Nome");
             ViewData["TIPO_CONSULTAId"] = new SelectList(_context.TIPO_CONSULTA.OrderBy(x => x.Descricao), "Id", "Descricao");
+            ViewData["FORMA_PAGAMENTOId"] = new SelectList(_context.FORMA_PAGAMENTO.OrderBy(x => x.Descricao), "Id", "Descricao");
             return View(aGENDAMENTO);
         }
 
@@ -124,7 +127,7 @@ namespace AppCareClinicMed.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,retorno,Data_agendamento,PACIENTEId,MEDICOId,TIPO_CONSULTAId,CONVENIOId")] AGENDAMENTO aGENDAMENTO)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,retorno,Data_agendamento,PACIENTEId,MEDICOId,TIPO_CONSULTAId,CONVENIOId, FORMA_PAGAMENTOId")] AGENDAMENTO aGENDAMENTO)
         {
             if (id != aGENDAMENTO.Id)
             {
@@ -155,6 +158,7 @@ namespace AppCareClinicMed.Controllers
             ViewData["MEDICOId"] = new SelectList(_context.MEDICO.OrderBy(x => x.Nome), "Id", "Nome");
             ViewData["PACIENTEId"] = new SelectList(_context.PACIENTE.OrderBy(x => x.Nome), "Id", "Nome");
             ViewData["TIPO_CONSULTAId"] = new SelectList(_context.TIPO_CONSULTA.OrderBy(x => x.Descricao), "Id", "Descricao");
+            ViewData["FORMA_PAGAMENTOId"] = new SelectList(_context.FORMA_PAGAMENTO.OrderBy(x => x.Descricao), "Id", "Descricao");
             return View(aGENDAMENTO);
         }
 

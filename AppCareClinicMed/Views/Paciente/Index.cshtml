@@ -4,6 +4,8 @@
     ViewData["Title"] = "Index";
 }
 
+<script src="~/lib/jquery-mask-plugin/src/jquery.mask.js" type="text/javascript" asp-append-version="true"></script>
+
 <h1>Pacientes</h1>
 
 <p>
@@ -81,7 +83,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Pais.Pais)
             </td>
-            <td>
+            <td id="txtCpf" data-mask="000.000.000-00">
                 @Html.DisplayFor(modelItem => item.Cpf)
             </td>
             <td>
@@ -99,3 +101,9 @@
 }
     </tbody>
 </table>
+<script>
+    $('#txtCpf').mask('000.000.000-00');
+</script>
+
+
+

@@ -43,20 +43,9 @@ namespace AppCareClinicMed.Controllers
             var paciente = _context.HISTORICO_PACIENTE.Find(id);
             var vPaciente = _context.PACIENTE.Find(paciente.PACIENTEId);
 
-            var lista = _context.HISTORICO_PACIENTE.Where(x => x.PACIENTEId == vPaciente.Id);
+            var lista = _context.HISTORICO_PACIENTE.Include(h => h.Medico).Include(h => h.Paciente).Where(x => x.PACIENTEId == vPaciente.Id);
 
             return View(await lista.OrderBy(x => x.Data_historico).ToListAsync());
-
-            //var hISTORICO_PACIENTE = await _context.HISTORICO_PACIENTE
-            //    .Include(h => h.Medico)
-            //    .Include(h => h.Paciente)
-            //    .FirstOrDefaultAsync(m => m.Id == id);
-            //if (hISTORICO_PACIENTE == null)
-            //{
-            //    return NotFound();
-            //}
-
-            //return View(hISTORICO_PACIENTE);
         }
 
         #endregion

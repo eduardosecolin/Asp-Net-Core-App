@@ -11,9 +11,11 @@ namespace AppCareClinicMed.Models {
         public int Id { get; set; }
 
         [StringLength(50)]
+        [Required(ErrorMessage = "Informe o nome")]
         public string Nome { get; set; }
 
         [StringLength(20)]
+        [Required(ErrorMessage = "Informe o crm")]
         public string Crm { get; set; }
 
         public ESPECIALIDADE Especialidade { get; set; }

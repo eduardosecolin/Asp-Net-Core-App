@@ -11,8 +11,12 @@ namespace AppCareClinicMed.Models {
         public int Id { get; set; }
 
         [StringLength(5)]
+        [Required(ErrorMessage = "Informe o tipo de retorno")]
         public string retorno { get; set; }
 
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [Required(ErrorMessage = "Informe a data do agendamento")]
         public DateTime Data_agendamento { get; set; }
 
         public PACIENTE Paciente { get; set; }

@@ -11,8 +11,12 @@ namespace AppCareClinicMed.Models {
         public int Id { get; set; }
 
         [StringLength(2000)]
+        [Required(ErrorMessage = "Informe a descrição do histórico")]
         public string Historico { get; set; }
 
+        [DataType(DataType.Date)]
+        [Required(ErrorMessage = "Informe a data")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime Data_historico { get; set; }
 
         public PACIENTE Paciente { get; set; }

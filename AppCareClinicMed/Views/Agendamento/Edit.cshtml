@@ -42,6 +42,10 @@
                 <span asp-validation-for="CONVENIOId" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label class="control-label">Forma de pagamento</label>
+                <select asp-for="FORMA_PAGAMENTOId" class="form-control" asp-items="ViewBag.FORMA_PAGAMENTOId"></select>
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Salvar" class="btn btn-primary" />
             </div>
         </form>

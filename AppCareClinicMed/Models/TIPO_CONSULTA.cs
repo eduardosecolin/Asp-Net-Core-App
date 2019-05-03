@@ -11,6 +11,7 @@ namespace AppCareClinicMed.Models {
         public int Id { get; set; }
 
         [StringLength(50)]
+        [Required(ErrorMessage = "Informe a descrição")]
         public string Descricao { get; set; }
     }
 }

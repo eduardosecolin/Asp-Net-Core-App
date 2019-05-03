@@ -31,6 +31,9 @@
             <th>
                 Convenio
             </th>
+            <th>
+                Forma de pagamento
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -54,6 +57,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Convenio.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Forma_pagamento.Descricao)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
