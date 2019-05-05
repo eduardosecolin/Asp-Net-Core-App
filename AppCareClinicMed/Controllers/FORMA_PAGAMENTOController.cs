@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AppCareClinicMed.Models;
+using AppCareClinicMed.Exceptions.ViewModel;
+using System.Diagnostics;
+using AppCareClinicMed.Data;
 
 namespace AppCareClinicMed.Controllers
 {
@@ -25,6 +28,7 @@ namespace AppCareClinicMed.Controllers
         #region Get and details
 
         // GET: FORMA_PAGAMENTO
+        [NoDirectAccess]
         public async Task<IActionResult> Index()
         {
             return View(await _context.FORMA_PAGAMENTO.ToListAsync());
@@ -169,6 +173,14 @@ namespace AppCareClinicMed.Controllers
         private bool FORMA_PAGAMENTOExists(int id)
         {
             return _context.FORMA_PAGAMENTO.Any(e => e.Id == id);
+        }
+
+        public IActionResult Error(string message) {
+            var viewModel = new ErrorViewModel {
+                Message = message,
+                RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier
+            };
+            return View(viewModel);
         }
 
         #endregion

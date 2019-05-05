@@ -32,6 +32,9 @@ namespace AppCareClinicMed {
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
+            services.AddSession();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
             services.AddDbContext<AppCareClinicMedContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("AppCareClinicMedContext")));
 
@@ -53,11 +56,12 @@ namespace AppCareClinicMed {
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+            app.UseSession();
 
             app.UseMvc(routes => {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=USUARIO}/{action=Login}/{id?}");
             });
         }
     }

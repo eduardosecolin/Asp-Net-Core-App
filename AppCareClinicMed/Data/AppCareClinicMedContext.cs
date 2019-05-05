@@ -9,6 +9,11 @@ namespace AppCareClinicMed.Models
 {
     public class AppCareClinicMedContext : DbContext
     {
+
+        public AppCareClinicMedContext() {
+
+        }
+
         public AppCareClinicMedContext (DbContextOptions<AppCareClinicMedContext> options)
             : base(options)
         {

@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AppCareClinicMed.Models;
+using AppCareClinicMed.Exceptions.ViewModel;
+using System.Diagnostics;
+using AppCareClinicMed.Data;
 
 namespace AppCareClinicMed.Controllers
 {
@@ -25,6 +28,7 @@ namespace AppCareClinicMed.Controllers
         #region Get and Details
 
         // GET: MEDICO
+        [NoDirectAccess]
         public async Task<IActionResult> Index()
         {
             var appCareClinicMedContext = _context.MEDICO.Include(m => m.Especialidade);
@@ -176,6 +180,14 @@ namespace AppCareClinicMed.Controllers
         private bool MEDICOExists(int id)
         {
             return _context.MEDICO.Any(e => e.Id == id);
+        }
+
+        public IActionResult Error(string message) {
+            var viewModel = new ErrorViewModel {
+                Message = message,
+                RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier
+            };
+            return View(viewModel);
         }
 
         #endregion

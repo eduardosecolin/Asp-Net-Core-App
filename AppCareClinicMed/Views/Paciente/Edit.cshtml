@@ -8,90 +8,86 @@
 
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-7">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="Nome" class="control-label"></label>
+            <div class="form-group" style="float:left; width:300px">
+                <label class="control-label">Nome</label>
                 <input asp-for="Nome" class="form-control" />
                 <span asp-validation-for="Nome" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="float:right; width:300px">
                 <label class="control-label">Data de Nascimento</label>
                 <input asp-for="Data_nascimento" class="form-control" />
                 <span asp-validation-for="Data_nascimento" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Sexo" class="control-label"></label>
+            <div class="form-group" style="float:left; width:300px">
+                <label class="control-label">Sexo</label>
                 <select asp-for="Sexo" class="form-control">
-                    <option value="">Selecione o sexo</option>
                     <option value="Masculino">Masculino</option>
                     <option value="Feminino">Feminino</option>
                     <option value="Outro Genero">Outro Gênero</option>
                 </select>
                 <span asp-validation-for="Sexo" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="float:right; width:300px">
                 <label class="control-label">Estado Civil</label>
-                <input asp-for="Estado_civil" class="form-control" />
-                <span asp-validation-for="Estado_civil" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Endereco" class="control-label"></label>
                 <select asp-for="Estado_civil" class="form-control">
                     <option value="Casado">Casado(a)</option>
                     <option value="Solteiro">Solteiro(a)</option>
                 </select>
+                <span asp-validation-for="Estado_civil" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="float:left; width:300px">
+                <label class="control-label">Endereço</label>
+                <input asp-for="Endereco" class="form-control" />
                 <span asp-validation-for="Endereco" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="float:right; width:300px">
                 <label class="control-label">Número</label>
                 <input asp-for="Numero" class="form-control" />
                 <span asp-validation-for="Numero" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="float:left; width:300px">
                 <label class="control-label">Bairro</label>
                 <input asp-for="Bairro" class="form-control" />
                 <span asp-validation-for="Bairro" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Cidade" class="control-label"></label>
+            <div class="form-group" style="float:right; width:300px">
+                <label class="control-label">Cidade</label>
                 <input asp-for="Cidade" class="form-control" />
                 <span asp-validation-for="Cidade" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="float:left; width:300px">
                 <label class="control-label">Estado</label>
                 <select asp-for="ESTADOSId" class="form-control" asp-items="ViewBag.ESTADOSId"></select>
-                <span asp-validation-for="ESTADOSId" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="float:right; width:300px">
                 <label class="control-label">País</label>
                 <select asp-for="PAISId" class="form-control" asp-items="ViewBag.PAISId"></select>
-                <span asp-validation-for="PAISId" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Cpf" class="control-label"></label>
+            <div class="form-group" style="float:left; width:300px">
+                <label class="control-label">Cpf</label>
                 <input data-mask="000.000.000-00" asp-for="Cpf" class="form-control" />
                 <span asp-validation-for="Cpf" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Rg" class="control-label"></label>
+            <div class="form-group" style="float:right; width:300px">
+                <label class="control-label">Rg</label>
                 <input data-mask="00.000.000-0" asp-for="Rg" class="form-control" />
                 <span asp-validation-for="Rg" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="float:left; width:300px">
                 <label class="control-label">Convenio</label>
                 <select asp-for="CONVENIOId" class="form-control" asp-items="ViewBag.CONVENIOId"></select>
-                <span asp-validation-for="CONVENIOId" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="float:right; width:300px">
                 <label class="control-label">E-mail</label>
                 <input asp-for="Email" class="form-control" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Salvar" class="btn btn-primary" />
+                <input type="submit" value="Salvar" class="btn btn-block btn-primary" />
             </div>
         </form>
     </div>

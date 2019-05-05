@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AppCareClinicMed.Models;
+using AppCareClinicMed.Exceptions.ViewModel;
+using System.Diagnostics;
+using AppCareClinicMed.Data;
 
 namespace AppCareClinicMed.Controllers
 {
@@ -26,17 +29,33 @@ namespace AppCareClinicMed.Controllers
         #region Get and Details
 
         // GET: AGENDAMENTO
+        [NoDirectAccess]
         public async Task<IActionResult> Index()
         {
-            //var appCareClinicMedContext = _context.AGENDAMENTO.Include(a => a.Convenio).Include(a => a.Medico).Include(a => a.Paciente).Include(a => a.Tipo_consulta).OrderBy(x => x.Data_agendamento.ToShortDateString() == DateTime.Now.ToShortDateString());
-            var lista =  _context.AGENDAMENTO.Include(a => a.Convenio).Include(a => a.Medico).Include(a => a.Paciente).Include(a => a.Tipo_consulta).Include(a => a.Forma_pagamento).Where(x => x.Data_agendamento.ToShortDateString().Equals(DateTime.Now.ToShortDateString())).ToListAsync();
-            return View(await lista);
+            try {
+
+                var lista = _context.AGENDAMENTO.Include(a => a.Convenio).Include(a => a.Medico).Include(a => a.Paciente).Include(a => a.Tipo_consulta).Include(a => a.Forma_pagamento).Where(x => x.Data_agendamento.ToShortDateString().Equals(DateTime.Now.ToShortDateString())).ToListAsync();
+                return View(await lista);
+
+            } catch(Exception e) {
+
+                return RedirectToAction(nameof(Error), new { message = e.Message });
+            }
 
         }
 
+        [NoDirectAccess]
         public async Task<IActionResult> GetAll() {
-            var appCareClinicMedContext = _context.AGENDAMENTO.Include(a => a.Convenio).Include(a => a.Medico).Include(a => a.Paciente).Include(a => a.Tipo_consulta).Include(a => a.Forma_pagamento);
-            return View(await appCareClinicMedContext.ToListAsync());
+
+            try {
+
+                var appCareClinicMedContext = _context.AGENDAMENTO.Include(a => a.Convenio).Include(a => a.Medico).Include(a => a.Paciente).Include(a => a.Tipo_consulta).Include(a => a.Forma_pagamento);
+                return View(await appCareClinicMedContext.ToListAsync());
+
+            }catch(Exception e) {
+
+                return RedirectToAction(nameof(Error), new { message = e.Message });
+            }
         }
 
         // GET: AGENDAMENTO/Details/5
@@ -44,7 +63,7 @@ namespace AppCareClinicMed.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return RedirectToAction(nameof(Error), new { message = "Id não encontrado!" });
             }
 
             var aGENDAMENTO = await _context.AGENDAMENTO
@@ -52,10 +71,11 @@ namespace AppCareClinicMed.Controllers
                 .Include(a => a.Medico)
                 .Include(a => a.Paciente)
                 .Include(a => a.Tipo_consulta)
+                .Include(a => a.Forma_pagamento)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (aGENDAMENTO == null)
             {
-                return NotFound();
+                return RedirectToAction(nameof(Error), new { message = "Dados não encontrado!" });
             }
 
             return View(aGENDAMENTO);
@@ -106,13 +126,13 @@ namespace AppCareClinicMed.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return RedirectToAction(nameof(Error), new { message = "Id não encontrado!" });
             }
 
             var aGENDAMENTO = await _context.AGENDAMENTO.FindAsync(id);
             if (aGENDAMENTO == null)
             {
-                return NotFound();
+                return RedirectToAction(nameof(Error), new { message = "Dados não encontrado!" });
             }
             ViewData["CONVENIOId"] = new SelectList(_context.CONVENIO.OrderBy(x => x.Descricao), "Id", "Descricao");
             ViewData["MEDICOId"] = new SelectList(_context.MEDICO.OrderBy(x => x.Nome), "Id", "Nome");
@@ -131,7 +151,7 @@ namespace AppCareClinicMed.Controllers
         {
             if (id != aGENDAMENTO.Id)
             {
-                return NotFound();
+                return RedirectToAction(nameof(Error), new { message = "Id não encontrado!" });
             }
 
             if (ModelState.IsValid)
@@ -145,7 +165,7 @@ namespace AppCareClinicMed.Controllers
                 {
                     if (!AGENDAMENTOExists(aGENDAMENTO.Id))
                     {
-                        return NotFound();
+                        return RedirectToAction(nameof(Error), new { message = "Dados não encontrado!" });
                     }
                     else
                     {
@@ -171,7 +191,7 @@ namespace AppCareClinicMed.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return RedirectToAction(nameof(Error), new { message = "Id não encontrado!" });
             }
 
             var aGENDAMENTO = await _context.AGENDAMENTO
@@ -179,10 +199,11 @@ namespace AppCareClinicMed.Controllers
                 .Include(a => a.Medico)
                 .Include(a => a.Paciente)
                 .Include(a => a.Tipo_consulta)
+                .Include(a => a.Forma_pagamento)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (aGENDAMENTO == null)
             {
-                return NotFound();
+                return RedirectToAction(nameof(Error), new { message = "Dados não encontrado!" });
             }
 
             return View(aGENDAMENTO);
@@ -206,6 +227,14 @@ namespace AppCareClinicMed.Controllers
         private bool AGENDAMENTOExists(int id)
         {
             return _context.AGENDAMENTO.Any(e => e.Id == id);
+        }
+
+        public IActionResult Error(string message) {
+            var viewModel = new ErrorViewModel {
+                Message = message,
+                RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier
+            };
+            return View(viewModel);
         }
 
         #endregion

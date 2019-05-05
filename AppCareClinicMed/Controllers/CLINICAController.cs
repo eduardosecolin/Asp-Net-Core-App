@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AppCareClinicMed.Models;
+using AppCareClinicMed.Exceptions.ViewModel;
+using System.Diagnostics;
+using AppCareClinicMed.Data;
 
 namespace AppCareClinicMed.Controllers
 {
@@ -26,6 +29,7 @@ namespace AppCareClinicMed.Controllers
         #region Get and Details
 
         // GET: CLINICA
+        [NoDirectAccess]
         public async Task<IActionResult> Index()
         {
             var appCareClinicMedContext = _context.CLINICA.Include(c => c.Estado).Include(c => c.Pais);
@@ -183,6 +187,14 @@ namespace AppCareClinicMed.Controllers
         private bool CLINICAExists(int id)
         {
             return _context.CLINICA.Any(e => e.Id == id);
+        }
+
+        public IActionResult Error(string message) {
+            var viewModel = new ErrorViewModel {
+                Message = message,
+                RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier
+            };
+            return View(viewModel);
         }
 
         #endregion

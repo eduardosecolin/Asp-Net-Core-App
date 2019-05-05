@@ -23,5 +23,6 @@ namespace AppCareClinicMed.Models {
         [DataType(DataType.EmailAddress)]
         [Required(ErrorMessage = "Informe o e-mail")]
         public string Email { get; set; }
+
     }
 }

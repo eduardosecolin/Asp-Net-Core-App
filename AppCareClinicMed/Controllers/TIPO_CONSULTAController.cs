@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AppCareClinicMed.Models;
+using AppCareClinicMed.Exceptions.ViewModel;
+using System.Diagnostics;
+using AppCareClinicMed.Data;
 
 namespace AppCareClinicMed.Controllers
 {
@@ -26,6 +29,7 @@ namespace AppCareClinicMed.Controllers
         #region Get and Details
 
         // GET: TIPO_CONSULTA
+        [NoDirectAccess]
         public async Task<IActionResult> Index()
         {
             return View(await _context.TIPO_CONSULTA.ToListAsync());
@@ -170,6 +174,14 @@ namespace AppCareClinicMed.Controllers
         private bool TIPO_CONSULTAExists(int id)
         {
             return _context.TIPO_CONSULTA.Any(e => e.Id == id);
+        }
+
+        public IActionResult Error(string message) {
+            var viewModel = new ErrorViewModel {
+                Message = message,
+                RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier
+            };
+            return View(viewModel);
         }
 
         #endregion
